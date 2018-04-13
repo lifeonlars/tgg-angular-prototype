@@ -1,0 +1,108 @@
+/* ---------------------------------------------------------------- */
+/* Icons
+/* ---------------------------------------------------------------- */
+    .pinimage {
+        background: url(../assets/images/pin.png) top left no-repeat;
+        height: 28px;
+        width: 21px;
+    }
+        .active .pinimage { background-position: bottom left; }
+
+    i.icon {
+        background: url(../assets/images/sprite-icons-main.png) no-repeat 0 0;
+        float: left;
+        height: 20px;
+        width: 25px;
+    }
+
+        i.icon-shoppingcart {
+            background: url(../assets/images/icon-cart.svg) no-repeat;
+            background-size: 25px 25px;
+            display: inline-block;
+            height: 25px;
+            width: 25px;
+            fill: #fff;
+        }
+            .page-categories i.icon-shoppingcart { margin-right: -2px; }
+
+
+
+        i.icon-delivery-large { background-position: -345px 0px; height: 36px; width: 50px; }
+        i.icon-pickup-large { background-position: -400px 0px; height: 36px; width: 50px; }
+
+            .active i.icon-delivery-large { background-position: -345px -40px; }
+            .active i.icon-pickup-large { background-position: -400px -40px; }
+
+    .icon-payment-methods-small {
+        background: url(../assets/images/sprite-icons-main.png) no-repeat 0 -218px;
+        display: block;
+        height: 32px;
+        width: 220px;
+    }
+    .icon-payment-methods-single {
+        background: url(../assets/images/sprite-icons-main.png) no-repeat 100px 100px;
+        display: inline-block;
+        height: 30px;
+        vertical-align: middle;
+        line-height: 1;
+    }
+        .icon-payment-methods-single.visa {
+            background-position: 0 -220px;
+            width: 40px;
+        }
+        .icon-payment-methods-single.mastercard {
+           background-position: -46px -220px;
+           width: 40px;
+        }
+
+    .icon-payment-methods {
+        background: url(../assets/images/sprite-icons-main.png) no-repeat 0 -70px;
+        display: inline-block;
+        height: 32px;
+        width: 285px;
+    }
+    .icon-payment-finance {
+        margin-top: 5px;
+        background: url(../assets/images/sprite-icons-main.png) no-repeat -230px -70px;
+        display: inline-block;
+        height: 32px;
+        width: 52px;
+    }
+    .icon-verified {
+        background: url(../assets/images/sprite-icons-main.png) no-repeat 0px 0px;
+        display: inline-block;
+        height: 30px;
+        width: 250px;
+    }
+
+
+    .icon-payment-creditcards-visa,
+    .icon-payment-creditcards-mastercard,
+    .icon-payment-creditcards-amex,
+    .icon-payment-creditcards-large,
+    .icon-payment-paypal-large,
+    .icon-payment-interestfree-large {
+        background: url(../assets/images/sprite-icons-main.png) no-repeat;
+        height: 50px;
+        display: inline-block;
+        float: none;
+        margin-bottom: 5px;
+    }
+
+
+    .icon-payment-creditcards-large { background-position: 0 -110px; width: 150px; }
+    .icon-payment-paypal-large { background-position: -264px -110px; width: 77px; }
+    .icon-payment-interestfree-large { background-position: 0 -160px; width: 160px;
+     }
+    .icon-payment-creditcards-visa { background-position: 0 -110px; width: 77px; }
+    .icon-payment-creditcards-mastercard { background-position: -83px -110px; width: 77px; }
+    .icon-payment-creditcards-amex { background-position: -165px -110px; width: 77px; }
+
+    .icon-priceguarantee {
+        background: url(../assets/images/sprite-icons-main.png) no-repeat -165px -160px;
+        display: block;
+        height: 60px;
+        width: 80px;
+    }
+
+

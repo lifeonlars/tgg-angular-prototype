@@ -1,0 +1,66 @@
+/* NEW FORM STYLING */
+/* ---------------------------------------------------------------- */
+/* Form adjustments
+/* ---------------------------------------------------------------- */
+/* Note these need to be declared separately or they won't work */
+::-webkit-input-placeholder      { color: #999; }
+:-moz-placeholder                { color: #999; }
+::-moz-placeholder               { color: #999; }
+:-ms-input-placeholder           { color: #999; }
+
+input::-webkit-input-placeholder { opacity: 0.5; }
+input:-moz-placeholder           { opacity: 0.5; /* Firefox 18- */ }
+input::-moz-placeholder          { opacity: 0.5;  /* Firefox 19+ */ }
+input:-ms-input-placeholder      { opacity: 0.5;}
+
+:-webkit-autofill                { background-color: #fff; }
+
+/* ---------------------------------------------------------------- */
+/*  Credit Card
+/* ---------------------------------------------------------------- */
+.has-icon-creditcard .form-control {
+    background-repeat: no-repeat;
+    background-size: 2rem 1.5rem;
+    background-position: center right .5rem;
+    background-image: url(../assets/images/cc-generic.svg);
+}
+.has-icon-cvc .form-control {
+    background-repeat: no-repeat;
+    background-size: 1.8rem 1.4rem;
+    background-position: center right .5rem;
+    background-image: url(../assets/images/cvv-icon-3-2x.png);
+}
+.has-amex-cvc .form-control {
+    background-repeat: no-repeat;
+    background-size: 1.8rem 1.4rem;
+    background-position: center right .5rem;
+    background-image: url(../assets/images/cvv-icon-4-2x.png);
+}
+.has-icon-visa .form-control {
+    background-repeat: no-repeat;
+    background-size: 2rem 1.5rem;
+    background-position: center right .5rem;
+    background-image: url(../assets/images/cc-visa.svg);
+}
+.has-icon-amex .form-control {
+    background-repeat: no-repeat;
+    background-size: 2rem 1.5rem;
+    background-position: center right .5rem;
+    background-image: url(../assets/images/cc-amex.svg);
+}
+.has-icon-mastercard .form-control {
+    background-repeat: no-repeat;
+    background-size: 2rem 1.5rem;
+    background-position: center right .5rem;
+    background-image: url(../assets/images/cc-mastercard.svg);
+}
+
+
+.checkbox label.text-medium,
+.radio label.text-medium {
+    font-weight: 500;
+}
+
+input[type=radio] {
+    margin-top: .4em;
+}

@@ -1,0 +1,58 @@
+<div class="container">
+  <nav class="menu-main" role="navigation">
+      <ul class="nav navbar-nav">
+          <li class="menu-main-item menu-main-dropdown menu-main-products">
+              <span class="menu-main-label">Browse Products <i class="fa fa-angle-down"></i></span>
+              <ul class="col-sm-3 menu-main-l1 clearfix">
+                  <li data-ng-repeat="category in categories" data-ng-mouseenter="showL2 = true" data-ng-mouseleave="showL2 = false">
+
+                      <a href="/category/category.id">category.name<i class="fa fa-angle-right pull-right"></i></a>
+                      <ul class="menu-main-l2 col-sm-6 col-md-3">
+                          <li data-ng-repeat="subcategory in category.subcategories" data-ng-mouseenter="showL3 = true" data-ng-mouseleave="showL3 = false">
+
+                              <a href="/category/subcategory.id">subcategory.name</a>
+                              <div class="menu-main-l3" data-ng-class="{'wide': subcategory.subcategories.length > 11, 'expand': showL3}">
+                                  <ul class="col-sm-6" data-ng-if="subcategory.subcategories">
+                                      <li data-ng-repeat="subsubcategory in subcategory.subcategories | limitTo:11">
+                                          <a href="/category/">subsubcategory.name</a>
+                                      </li>
+                                  </ul>
+                                  <ul class="col-sm-6">
+                                      <li data-ng-repeat="subsubcategory in subcategory.subcategories" data-ng-if="$index > 10">
+                                          <a href="/category/">subsubcategory.name</a>
+                                      </li>
+                                  </ul>
+                              </div><!-- /L3 -->
+
+                          </li>
+                      </ul> <!-- /L2 -->
+                  </li>
+              </ul> <!-- /L1 -->
+          </li>
+
+          <li class="menu-main-item menu-main-dropdown">
+              <span class="menu-main-label">Brands <i class="fa fa-angle-down"></i></span>
+              <nav class="megamenu-container container clearfix">
+                  <div class="megamenu-content clearfix"></div>
+              </nav>
+          </li>
+
+          <li class="menu-main-item menu-main-dropdown">
+              <span class="menu-main-label">Deals &amp; Catalogues <i class="fa fa-angle-down"></i></span>
+              <nav class="megamenu-container container clearfix">
+                  <div class="megamenu-content clearfix"></div>
+              </nav>
+          </li>
+          <li class="menu-main-item menu-main-dropdown">
+              <span class="menu-main-label">Gifts <i class="fa fa-angle-down"></i></span>
+              <nav class="megamenu-container container clearfix">
+                  <div class="megamenu-content clearfix"></div>
+              </nav>
+          </li>
+          <li class="menu-main-item">
+              <a href="/concierge/" class="menu-main-label">Concierge</a>
+          </li>
+      </ul>
+  </nav>
+</div>
+

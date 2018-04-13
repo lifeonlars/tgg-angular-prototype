@@ -1,0 +1,84 @@
+<div class="container">
+
+    <div class="masthead-header row">
+
+        <!-- Mobile Logo - shown only on mobile -->
+        <div class="col-xs-2 padd-right-0 visible-xs nav-toggle text-left" data-ng-init="$root.mobileMenu = false" >
+            <span type="button" class="mobilemenu-toggle">
+                <svg class="mobile-toggle-svg fill-primary"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/images/sprite-icons.svg#icon-hamburger"></use></svg>
+            </span>
+        </div>
+
+        <!-- Desktop/Tablet Logo - shown on tablet and desktop -->
+        <div class="col-xs-8 col-sm-3 masthead-branding ">
+            <a href="/" class="masthead-branding-logo"><img src="./assets/images/the-good-guys-logo.svg" class="img-responsive"></a>
+        </div>
+        <div class="col-sm-1 col-md-2 col-lg-1 padd-0"></div>
+        <!-- Desktop Search -->
+        <section id="search" class="col-sm-3 col-lg-2 hidden-xs padd-0">
+                <form data-ng-submit="search(searchTerm)" role="form">
+                    <input id="desktop-searchinput" class="form-control searchbox" type="text" placeholder="Search" name="q" data-ng-model="searchTerm">
+                    <button class="btn btn-link" value="Search" id="desktop-searchsubmit" type="submit" ><i class="fa fa-search"></i></button>
+                </form>
+        </section>
+
+
+        <nav class="col-sm-2 col-lg-4 padd-0 hidden-xs supplementary">
+            <ul class="padd-top-10 small-nav">
+                <li>
+                    <a href="#" title="About Us">
+                        <span class="hidden-sm hidden-md">About Us</span>
+                        <i class="fa fa-info-circle visible-sm visible-md"></i>
+                    </a>
+                </li>
+                <li class="borderleft">
+                    <a href="/storelocator" title="Store Trading hours &amp; Locations">
+                        <span class="hidden-sm hidden-md">Store Locator &amp; Trading Hours</span>
+                        <i class="fa fa-map-marker visible-sm visible-md"></i>
+                    </a>
+                </li>
+                <li ng-hide="isLoggedIn()" class="borderleft">
+                    <a href="/login" data-ng-class="{active: isActive('/login')}" title="Login or register">
+                        <span class="hidden-sm hidden-md">Login</span>
+                        <i class="fa fa-user visible-sm visible-md"></i>
+                    </a>
+                    <span class="hidden-sm hidden-md">or</span>
+                    <a href="/signup" data-ng-class="{active: isActive('/signup')}" class="hidden-sm hidden-md">
+                        Register
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+
+        <!-- Full Minicart - Hidden on mobile -->
+        <section class="col-sm-3 col-md-2 minicart-container hidden-xs"></section>
+
+
+        <!-- Alternative simplified minicart icon - shown only on mobile -->
+        <section class="col-xs-2 padd-left-0 text-right visible-xs">
+          <div class="minicart-icon-mobile">
+              <a href="#!/cart">
+                  <svg class="mobile-minicart-svg fill-primary"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/images/sprite-icons.svg#icon-cart"></use></svg>
+                  <span class="items visible-xs">1</span>
+              </a>
+          </div>
+        </section>
+
+    </div>
+
+      <!-- Mobile Search box - shown only on mobile -->
+    <section class="search-mobile visible-xs">
+        <form class="clearfix" data-ng-submit="search(searchTerm)" role="form">
+            <input class="searchbox" type="text" placeholder="Search" name="q">
+            <button class="btn btn-link" value="Search" id="searchsubmit" type="submit" ><i class="fa fa-search"></i></button>
+        </form>
+    </section>
+
+</div><!-- /.container -->
+
+<!-- Main nav on desktop -->
+<section class="navbar-container hidden-xs">
+    <app-primarynav></app-primarynav>
+</section>
+

@@ -1,0 +1,269 @@
+
+// Generate Colour Palette using base colour
+@mixin color-palette($base-color) { 
+
+    $bg-color: $base-color;
+    & .bg-hex::before {
+      text-transform: uppercase; 
+      content: '#{$base-color}';          
+    }
+
+    /* Lighter colours */
+    &.bg-lighten-1 {
+        $bg-color: desaturate(lighten($base-color, 7%), 5);
+        color: #000;
+        background: $bg-color;
+        & .bg-hex::before {
+          content: '#{$bg-color}';          
+        }
+    }
+    &.bg-lighten-2 {
+        $bg-color: desaturate(lighten($base-color, 14%), 5);
+        color: #000;
+        background: $bg-color;
+        & .bg-hex::before {
+          content: '#{$bg-color}';          
+        }
+    }
+    &.bg-lighten-3 {
+        $bg-color: desaturate(lighten($base-color, 21%), 5);
+        color: #000;
+        background: $bg-color;
+        & .bg-hex::before {
+          content: '#{$bg-color}';          
+        }
+    }
+    &.bg-lighten-4 {
+        $bg-color: desaturate(lighten($base-color, 28%), 5);
+        color: #000;
+        background: $bg-color;
+        & .bg-hex::before {
+          content: '#{$bg-color}';          
+        }
+    
+    }
+    &.bg-lighten-5 {
+        $bg-color: desaturate(lighten($base-color, 35%), 5);
+        color: #000;
+        background: $bg-color;        
+        & .bg-hex::before {
+          content: '#{$bg-color}';          
+        }
+    }
+    &.bg-lighten-6 {
+        $bg-color: desaturate(lighten($base-color, 42), 5);
+        color: #000;
+        background: $bg-color;        
+        & .bg-hex::before {
+          content: '#{$bg-color}';          
+        }
+    }
+
+    /* Darker colours */
+    &.bg-darken-1 {
+        $bg-color: desaturate(darken($base-color, 7%), 5);
+        color: #fff;
+        background: $bg-color;
+        & .bg-hex::before {
+          content: '#{$bg-color}';          
+        }
+    }
+    &.bg-darken-2 {
+        $bg-color: desaturate(darken($base-color, 14%), 5);
+        background: $bg-color;
+        color: #fff;        
+        & .bg-hex::before {
+          content: '#{$bg-color}';          
+        }
+    }  
+    &.bg-darken-3 {
+        $bg-color: desaturate(darken($base-color, 21%), 5);
+        color: #fff;        
+        background: $bg-color;
+        & .bg-hex::before {
+          content: '#{$bg-color}';          
+        }
+    }    
+    &.bg-darken-4 {
+        $bg-color: desaturate(darken($base-color, 28%), 5);
+        color: #fff;
+        background: $bg-color;
+        & .bg-hex::before {
+          content: '#{$bg-color}';          
+        }
+    }
+
+
+}
+
+/* Background colour variations */
+@mixin bg-darken-1($bg-color) {
+  $bg-color: desaturate(darken($bg-color, 7%), 5);
+  background: $bg-color;
+}
+
+@mixin bg-darken-2($bg-color) {
+  $bg-color: desaturate(darken($bg-color, 14%), 5);
+  background: $bg-color;
+}
+
+@mixin bg-darken-3($bg-color) {
+  $bg-color: desaturate(darken($bg-color, 21%), 5);
+  background: $bg-color;
+}
+
+@mixin bg-darken-4($bg-color) {
+  $bg-color: desaturate(darken($bg-color, 28%), 5);
+  background: $bg-color;
+}
+
+
+@mixin bg-lighten-1($bg-color) {
+  $bg-color: desaturate(lighten($bg-color, 7%), 5);
+  background: $bg-color;
+}
+
+@mixin bg-lighten-2($bg-color) {
+  $bg-color: desaturate(lighten($bg-color, 14%), 5);
+  background: $bg-color;
+}
+
+@mixin bg-lighten-3($bg-color) {
+  $bg-color: desaturate(lighten($bg-color, 21%), 5);
+  background: $bg-color;
+}
+
+@mixin bg-lighten-4($bg-color) {
+  $bg-color: desaturate(lighten($bg-color, 28%), 5);
+  background: $bg-color;
+}
+@mixin bg-lighten-5($bg-color) {
+  $bg-color: desaturate(lighten($bg-color, 35%), 5);
+  background: $bg-color;
+}
+
+
+
+
+/* Text colour variations */
+@mixin text-darken-1($color) {
+  $color: desaturate(darken($color, 7%), 5);
+  color: $color;
+}
+@mixin text-darken-2($color) {
+  $color: desaturate(darken($color, 14%), 5);
+  color: $color;
+}
+@mixin text-darken-3($color) {
+  $color: desaturate(darken($color, 21%), 5);
+  color: $color;
+}
+@mixin text-darken-4($color) {
+  $color: desaturate(darken($color, 28%), 5);
+  color: $color;
+}
+
+
+@mixin text-lighten-1($color) {
+  $color: desaturate(lighten($color, 7%), 5);
+  color: $color;
+}
+@mixin text-lighten-2($color) {
+  $color: desaturate(lighten($color, 14%), 5);
+  color: $color;
+}
+@mixin text-lighten-3($color) {
+  $color: desaturate(lighten($color, 21%), 5);
+  color: $color;
+}
+@mixin text-lighten-4($color) {
+  $color: desaturate(lighten($color, 28%), 5);
+  color: $color;
+}
+@mixin text-lighten-5($color) {
+  $color: desaturate(lighten($color, 35%), 5);
+  color: $color;
+}
+
+
+
+// Add correct colours to expand section of expandable labels   
+@mixin labl-expand($bg) {  
+    $bg-color: $bg; 
+    &.labl-prod-expand {               
+        & .labl-prod-title:after {
+            @include bg-darken-1($bg-color);
+        }
+        & .labl-prod-details {
+            @include bg-darken-1($bg-color);   
+        }
+    }
+}
+
+
+// Vertical gradient, from top to bottom
+//
+// Creates two color stops, start and end, by specifying a color and position for each color stop.
+// Color stops are not available in IE9 and below.
+@mixin gradient-vertical($start-color: $gray-dark-4, $end-color: $gray-dark-6, $start-percent: 0%, $end-percent: 100%) {
+  background-image: -webkit-linear-gradient(top, $start-color $start-percent, $end-color $end-percent);  // Safari 5.1-6, Chrome 10+
+  background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
+}
+
+
+@mixin gradient-diagonal($start-color: $gray-dark-4, $end-color: $gray-dark-6, $start-percent: 0%, $end-percent: 100%) {
+  background: -moz-linear-gradient(-45deg, $start-color $start-percent, $end-color $end-percent); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop($start-percent,$start-color), color-stop($end-percent,$end-color)); /* Chrome,Safari4+ */
+ 
+  background: -webkit-linear-gradient(-45deg, $start-color $start-percent,$end-color $end-percent); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg, $start-color $start-percent,$end-color $end-percent); /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg, $start-color $start-percent,$end-color $end-percent); /* IE10+ */
+  background: linear-gradient(-45deg, $start-color $start-percent,$end-color $end-percent); /* W3C */
+
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
+}
+
+
+
+
+/// Gives a card depth effect.
+/// @param {Number} $depth - depth level (between 1 and 5)
+/// @link http://www.google.com/design/spec/layout/layout-principles.html#layout-principles-dimensionality Google Design
+/// @requires {function} top-shadow
+/// @requires {function} bottom-shadow
+@mixin card($depth) {
+  @if $depth < 1 {
+    box-shadow: none;
+  } @else if $depth > 5 {
+    @warn "Invalid $depth `#{$depth}` for mixin `card`.";
+  } @else {
+    box-shadow: bottom-shadow($depth), top-shadow($depth);  
+  }
+}
+
+
+
+/// Computes a top-shadow for a card effect.
+/// @param {Number} $depth - depth level
+/// @return {List}
+@function top-shadow($depth) {
+  $primary-offset: nth(1.5 3 10 14 19, $depth) * 1px;
+  $blur: nth(1.5 3 10 14 19, $depth) * 4px;
+  $color: rgba(black, nth(.05 .06 .07 .08 .09, $depth));
+
+  @return 0 $primary-offset $blur $color;
+}
+
+/// Computes a bottom-shadow for a card effect.
+/// @param {Number} $depth - depth level
+/// @return {List}
+@function bottom-shadow($depth) {
+  $primary-offset: nth(1.5 3 6 10 15, $depth) * 1px;
+  $blur: nth(1 3 3 5 12, $depth) * 4px;
+  $color: rgba(black, nth(.05 .06 .07 .08 .3, $depth));
+
+  @return 0 $primary-offset $blur $color;
+}
