@@ -25,3 +25,48 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## COMPONENTS 
+
+ * Product Tile 
+    - Standard Tile (grid view)
+    - List Tile (should list view of tiles be a separate component?)
+    - Slim Tile (for certona style widgets and cross sell in cart)
+ * Product Slider (standard tiles and slim slider variants)
+ * Pagination component
+ * Postcode search
+ * Store listing 
+ 
+
+## SERVICES
+
+*Cart Service*
+ - Load cart contents
+ - Add to cart
+ - Remove from cart
+ - Empty cart
+ - Cart Total
+
+*Fulfilment Service*
+ - List delivery options (given region type => region type requires postcode)
+ - Calculate delivery cost (given type/postcode)
+ - Pick-up options (given store ID => store id requires postcode)
+ - Load selected fulfillment options (if delivery or pick-up is selected, load previous options)
+ 
+ *Product API* 
+ 
+  - Single product by ID
+  - Products by category
+  - Products by keyword (name only)
+  - Products by IDs (array of IDs)
+  
+  *Postcode Zone API*
+   - Return delivery zone based on postcode (metro, local, regional-a, regional-b, remote)
+   
+  *Store API*
+   - Load single store information based on ID (Address, opening hours, phone number etc.)
+   
+  *Category API*
+   - Load single category information based on ID
+  
