@@ -1,7 +1,6 @@
-   
 /* Price Points */
-// New generic styling for compacta price points     
-/* -------------------------------------------------------------------- */    
+// New generic styling for compacta price points
+/* -------------------------------------------------------------------- */
 /*
    There are 3 price point size variations, default, large and small
    There are 3 variants of each standard, has-ticket and has-cashback
@@ -25,191 +24,230 @@
    X-Small (does not support cashback or ticket pricing)
    - Standard:      2.4rem
 
-   */ 
+   */
 
 .pricepoint,
 .pricepoint-lg,
 .pricepoint-sm,
 .pricepoint-xs {
-    font-family: $font-family-price;
-    font-weight: normal;
-    line-height: 0.85;
-    color: #000;
-    display: block;    
+  font-family: $font-family-price;
+  font-weight: normal;
+  line-height: 0.85;
+  color: #000;
+  display: block;
 }
-.pricepoint .pricepoint-price {     
-    display: inline-block;
-    padding-top: 5px; 
+.pricepoint .pricepoint-price {
+  display: inline-block;
+  padding-top: 5px;
 }
-
 
 // Reset top padding when ticket price or cashback is shown
 .has-ticket .pricepoint-price,
-.has-cashback .pricepoint-price { padding-top: 0; }    
-
+.has-cashback .pricepoint-price {
+  padding-top: 0;
+}
 
 // Default Pricepoints (Product tiles, Sticky buy now)
-.pricepoint .pricepoint-price                   { font-size: 3.5rem; }  // = 49px
-.has-ticket .pricepoint .pricepoint-price       { font-size: 3rem; }    // = 42px 
-.pricepoint.has-cashback .pricepoint-price      { font-size: 2.7rem; }  // = 37.8px
+.pricepoint .pricepoint-price {
+  font-size: 3.5rem;
+} // = 49px
+.has-ticket .pricepoint .pricepoint-price {
+  font-size: 3rem;
+} // = 42px
+.pricepoint.has-cashback .pricepoint-price {
+  font-size: 2.7rem;
+} // = 37.8px
 
-.pricepoint .ticketprice                        { font-size: 1.4rem;}
+.pricepoint .ticketprice {
+  font-size: 1.4rem;
+}
 .pricepoint .beforecashback b,
-.pricepoint .aftercashback b                    { font-size: 1.25rem; }
-
+.pricepoint .aftercashback b {
+  font-size: 1.25rem;
+}
 
 // Small Pricepoints (Small product tiles: recently viewed/related/also purchased)
-.pricepoint-sm .pricepoint-price                { font-size: 3rem; }    // = 42px
-.has-ticket .pricepoint-sm .pricepoint-price    { font-size: 2.4rem; }  // = 33.6px
-.pricepoint-sm.has-cashback .pricepoint-price   { font-size: 2rem; }    // = 30.8px
+.pricepoint-sm .pricepoint-price {
+  font-size: 3rem;
+} // = 42px
+.has-ticket .pricepoint-sm .pricepoint-price {
+  font-size: 2.4rem;
+} // = 33.6px
+.pricepoint-sm.has-cashback .pricepoint-price {
+  font-size: 2rem;
+} // = 30.8px
 
 .pricepoint-sm .beforecashback b,
-.pricepoint-sm .aftercashback b                 { font-size: 1.1rem; }  // = 15.4px
+.pricepoint-sm .aftercashback b {
+  font-size: 1.1rem;
+} // = 15.4px
 
 // Large Pricepoints (Product page main price point)
-.pricepoint-lg .pricepoint-price                { font-size: 4.5rem; }  // = 63px
-.has-ticket .pricepoint-lg .pricepoint-price    { font-size: 4rem; }    // = 56px
-.pricepoint-lg.has-cashback .pricepoint-price   { font-size: 3rem; }    // = 42px
+.pricepoint-lg .pricepoint-price {
+  font-size: 4.5rem;
+} // = 63px
+.has-ticket .pricepoint-lg .pricepoint-price {
+  font-size: 4rem;
+} // = 56px
+.pricepoint-lg.has-cashback .pricepoint-price {
+  font-size: 3rem;
+} // = 42px
 
 .has-ticket .pricepoint-lg .ticketprice,
-.pricepoint-lg .savings                         { font-size: 1.75rem; } // 24.5px 
+.pricepoint-lg .savings {
+  font-size: 1.75rem;
+} // 24.5px
 .pricepoint-lg .beforecashback b,
-.pricepoint-lg .aftercashback b                 { font-size: 1.5rem; }
-
-
-// Small Pricepoints (Small product tiles: recently viewed/related/also purchased)
-.pricepoint-sm .pricepoint-price                { font-size: 3rem; }    // = 42px
-.has-ticket .pricepoint-sm .pricepoint-price    { font-size: 2.4rem; }  // = 33.6px
-.pricepoint-sm.has-cashback .pricepoint-price   { font-size: 2.2rem; }  // = 30.8px
-
+.pricepoint-lg .aftercashback b {
+  font-size: 1.5rem;
+}
 
 // Small Pricepoints (Small product tiles: recently viewed/related/also purchased)
-.pricepoint-xs .pricepoint-price                { font-size: 2.4rem; }  // = 33.6px
+.pricepoint-sm .pricepoint-price {
+  font-size: 3rem;
+} // = 42px
+.has-ticket .pricepoint-sm .pricepoint-price {
+  font-size: 2.4rem;
+} // = 33.6px
+.pricepoint-sm.has-cashback .pricepoint-price {
+  font-size: 2.2rem;
+} // = 30.8px
 
+// Small Pricepoints (Small product tiles: recently viewed/related/also purchased)
+.pricepoint-xs .pricepoint-price {
+  font-size: 2.4rem;
+} // = 33.6px
 
 // Note: has-ticket class is on a parent element rather than on .pricepoint element
 // This is in order to support showing price slash on thumbnails
 
 // Currency symbol and decimal adjustments
 // Generic for all currency alignment (Futura)
-.curr, 
+.curr,
 .dec {
-    font-size: .65em;
-    font-style: normal;
-    position: relative;
-    vertical-align: top;
-    top: .25em;
-    bottom: auto;
+  font-size: 0.65em;
+  font-style: normal;
+  position: relative;
+  vertical-align: top;
+  top: 0.25em;
+  bottom: auto;
 }
 // Compacta specific
 .pricepoint .curr,
-.pricepoint .dec {        
-    line-height: 1;        
+.pricepoint .dec {
+  line-height: 1;
 }
-.pricepoint .curr { top: 0; }
-.pricepoint .dec { 
-    padding-left: 1px; 
-    top: 0.01em;
+.pricepoint .curr {
+  top: 0;
 }
-
-
+.pricepoint .dec {
+  padding-left: 1px;
+  top: 0.01em;
+}
 
 /* Price Points: Cashback styling */
 /* -------------------------------------------------------------------- */
-.pricepoint.has-cashback {  text-align: center; }
+.pricepoint.has-cashback {
+  text-align: center;
+}
 
 .pricepoint .beforecashback,
 .pricepoint .aftercashback {
-    display: inline-block;
-    text-align: left;
-    padding: 0 5px;
+  display: inline-block;
+  text-align: left;
+  padding: 0 5px;
 }
-.pricepoint .aftercashback { color: $labl-cashback; }
-
+.pricepoint .aftercashback {
+  color: $labl-cashback;
+}
 
 .pricepoint.has-cashback .divider {
-    position: relative;
-    height: 100%;
-    min-height: 58px;
+  position: relative;
+  height: 100%;
+  min-height: 58px;
 }
 .pricepoint.has-cashback .divider::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    height: 100%;
-    width: 2px;
-    border-left: 1px solid $gray-light-2;
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  border-left: 1px solid $gray-light-2;
 }
 
 .pricepoint .aftercashback b,
 .pricepoint .beforecashback b {
-    display: block;    
-    text-transform: uppercase;        
-    white-space: nowrap;
+  display: block;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
-.pricepoint .aftercashback b { color: $brand-primary; }
+.pricepoint .aftercashback b {
+  color: $brand-primary;
+}
 
 .pricepoint .aftercashback small,
 .pricepoint .beforecashback small {
-    font-family: $font-family-base;
-    font-size: 0.8rem;
-    color: $gray-dark-2;
-    display: block;
-    line-height: 1;
+  font-family: $font-family-base;
+  font-size: 0.8rem;
+  color: $gray-dark-2;
+  display: block;
+  line-height: 1;
 }
 
 /* Ticket price */
 /* -------------------------------------------------------------------- */
 .pricepoint .ticketprice {
-    font-size: 1.4rem;
-    line-height: 0.8;
-    color: #000;
-    padding-top: 3px;
-    text-transform: uppercase;    
+  font-size: 1.4rem;
+  line-height: 0.8;
+  color: #000;
+  padding-top: 3px;
+  text-transform: uppercase;
 }
 .pricepoint .ticketprice span {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 .pricepoint .ticketprice span:after {
-    content: ' ';
-    position: absolute;
-    top: 3px;
-    right: -1px;
-    width: 100%;
-    border-top: 2px solid $labl-cashback;
-    transform: rotate(-17deg);
-    transform-origin: top right;
+  content: ' ';
+  position: absolute;
+  top: 3px;
+  right: -1px;
+  width: 100%;
+  border-top: 2px solid $labl-cashback;
+  transform: rotate(-17deg);
+  transform-origin: top right;
 }
 
-
-// Adjustments for SMALL price points 
+// Adjustments for SMALL price points
 /* -------------------------------------------------------------------- */
 
-.pricepoint-sm .beforecashback { padding-left: 0; }
-.pricepoint-sm .aftercashback  { padding: 0; }   
-  
+.pricepoint-sm .beforecashback {
+  padding-left: 0;
+}
+.pricepoint-sm .aftercashback {
+  padding: 0;
+}
 
-
-
-// Adjustments for LARGE price points 
+// Adjustments for LARGE price points
 /* -------------------------------------------------------------------- */
 
 // Slightly different angle
-.pricepoint-lg .ticketprice span:after { transform: rotate(-20deg); }
+.pricepoint-lg .ticketprice span:after {
+  transform: rotate(-20deg);
+}
 
 // Savings only appear on large pricepoints and not in tiles
 .pricepoint-lg .savings {
-    text-transform: uppercase;
-    font-size: 1.75rem;
-    color: $brand-primary;
-    margin: 0;    
-    display: block;
-    text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.75rem;
+  color: $brand-primary;
+  margin: 0;
+  display: block;
+  text-decoration: none;
 }
 .pricepoint-lg .tcs-caret {
-    font-size: 1rem;
-    font-family: $font-family-base;
-    vertical-align: top;
+  font-size: 1rem;
+  font-family: $font-family-base;
+  vertical-align: top;
 }
