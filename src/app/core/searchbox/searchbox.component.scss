@@ -1,0 +1,54 @@
+@import '../../../assets/scss/_variables.scss';
+
+@media screen and (min-width: $screen-sm) {
+  /* Adapt Search for Tablet and above */
+  .searchform {
+    position: relative;
+    margin-top: 15px;
+    line-height: 1;
+    text-align: left;
+  }
+  .searchform .searchbox {
+    display: block;
+    margin: 0;
+    background: $gray-light-4;
+    color: $gray-dark-4;
+    border: 1px solid $gray-light-2;
+    padding-right: 35px;
+    font-size: 1.2em;
+    transition: background 0.5s linear;
+  }
+  .searchform .searchbox:focus {
+    background: #fff;
+    color: #000;
+    border-color: $gray;
+    outline: none;
+  }
+  .searchform .searchbox:focus + .btn {
+    color: $gray-dark-4;
+  }
+  .searchform .btn {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    outline: none;
+    position: absolute;
+    text-align: center;
+    right: inherit;
+    right: 5px;
+    top: -1px;
+    width: 28px;
+    padding: 0;
+    box-shadow: none;
+    outline: none;
+  }
+  .searchform .btn:hover {
+    color: $brand-info;
+  }
+}
+
+@media screen and (min-width: $screen-lg) {
+  .searchform {
+    margin-top: 18px;
+  }
+}
