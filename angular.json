@@ -52,6 +52,9 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
+            },
+            "defaults": {
+              "styleExt": "scss"
             }
           }
         },
