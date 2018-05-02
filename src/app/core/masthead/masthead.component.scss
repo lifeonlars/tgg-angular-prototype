@@ -48,74 +48,21 @@
   }
 }
 
-.masthead .nav-secondary {
+.masthead .nav-supplementary {
   text-align: left;
-  padding-top: 18px;
+  padding-top: 8px;
   line-height: 1.2;
 }
-.masthead .nav-secondary .nav-secondary-icon {
+.masthead .nav-supplementary .nav-supplementary-icon {
   color: $brand-info;
   font-size: 2.3rem;
   float: left;
   padding-right: 5px;
 }
 
-.masthead .nav-secondary b {
+.masthead .nav-supplementary b {
   display: block;
 }
-.masthead .nav-secondary span {
+.masthead .nav-supplementary span {
   color: $gray-dark-2;
-}
-
-/* Mobile search ----------------------------------------------------- */
-.search-mobile {
-  padding: 0.5em 0;
-  margin: 0 auto;
-  position: relative;
-  font-size: 1.5em;
-}
-.search-mobile form {
-  position: relative;
-  width: 100%;
-  text-align: left;
-}
-.search-mobile .searchbox {
-  display: block;
-  border: 1px solid #ccc;
-  line-height: 1.5;
-  box-shadow: none;
-  padding: 4px 45px 4px 10px;
-  margin: 0;
-  background: #fff;
-  color: $gray;
-  font-size: 0.9em;
-  width: 100%;
-  border-radius: 0 6px 6px 0;
-  transition: background 1s linear;
-}
-.search-mobile .searchbox:focus {
-  color: #000;
-  outline: none;
-  border-color: #c0c0c0;
-  background: #fff;
-}
-
-.search-mobile .btn {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 45px;
-  padding: 0.26em 0.4em;
-  color: #fff;
-  font-size: 1.2em;
-  text-align: center;
-  line-height: 1;
-  outline: none;
-  background-color: $brand-primary;
-  border: none;
-  border-radius: 0 6px 6px 0;
-}
-.search-mobile .btn:active,
-.search-mobile .btn:hover {
-  color: $brand-info;
 }

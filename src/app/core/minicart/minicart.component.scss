@@ -1,23 +1,24 @@
 @import '../../../assets/scss/_variables.scss';
-
+@import '../../../assets/scss/_mixins.scss';
 .minicart {
   position: relative;
   overflow: visible;
   text-transform: uppercase;
-  width: 55px;
+  width: 50px;
+  padding: 10px 5px;
+  cursor: pointer;
+  border: 1px solid transparent;
 }
-.minicart.empty .minicart-icon {
-  color: $brand-info;
-}
-.minicart.empty .minicart-badge {
-  display: none;
+.minicart:hover {
+  border-color: $gray-light-1;
+  border-bottom-color: #fff;
+  border-radius: 4px 4px 0 0;
+  @include card(3);
+  z-index: 100;
+  transition: all ease-in 0.15s;
 }
 
-.minicart.has-products .minicart-icon {
-  color: $brand-success;
-  font-size: 2.3rem;
-}
-.minicart.has-products .minicart-badge {
+.minicart .minicart-badge {
   border-radius: 10px;
   background: $brand-danger;
   color: #fff;
@@ -27,27 +28,80 @@
   font-size: 0.85rem;
   font-weight: 500;
   position: absolute;
-  top: -3px;
-  right: 6px;
+  top: 6px;
+  right: 4px;
+}
+/* Minicart styling when empty */
+.minicart.empty .minicart-icon {
+  color: $brand-info;
+}
+.minicart.empty .minicart-badge {
+  display: none;
+}
+/* Minicart styling when it contains products */
+.minicart.has-products .minicart-icon {
+  color: $brand-success;
+  font-size: 2.3rem;
 }
 
-.minicart a,
-.minicart a:hover {
+/* Minicart Dropdown */
+.minicart .minicart-dropdown {
+  position: absolute;
+  top: 100%;
+  right: -1px;
+  width: 200px;
+  max-height: 0;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 4px 0 4px 4px;
+  font-size: 0.9em;
+  color: #000;
+}
+
+.minicart:hover .minicart-dropdown {
+  text-transform: none;
+  padding: 15px 10px;
+  border: 1px solid $gray-light-1;
+  border-top: none;
+  max-height: 350px;
+  transition: max-height ease-in 0.25s, box-shadow ease-in 0.25s;
+  @include card(3);
+}
+.minicart:hover .minicart-dropdown::before {
+  content: ' ';
+  background: #fff;
+  border-top: 1px solid $gray-light-1;
+  border-top-left-radius: 4px;
+  position: absolute;
+  height: 1px;
+  width: 150px;
+  top: 0;
+  left: 0;
+}
+
+.minicart-dropdown a,
+.minicart-dropdown a:hover {
   text-decoration: none;
 }
 
-// .minicart:hover .minicart-dropdown {
-//   text-transform: none;
-//   background: $gray-lighter;
-//   border-bottom: 8px solid $brand-success;
-//   position: absolute;
-//   top: 100%;
-//   right: 0;
-//   width: 250px;
-//   max-height: 350px;
-//   z-index: 1006;
-//   font-size: 0.9em;
-//   color: #000;
-//   opacity: 1;
-//   transition: all ease-in-out 0.3s;
-// }
+.minicart-list {
+  list-style: none;
+  padding: 0 0 0 25px;
+}
+.minicart-list li {
+  padding-bottom: 15px;
+}
+.minicart-list-count {
+  width: 25px;
+  float: left;
+  margin-left: -25px;
+}
+.minicart-list-cost {
+  display: block;
+  text-align: right;
+  padding-top: 5px;
+}
+.minicart-summary {
+  border-top: 1px solid $gray-light-2;
+  padding: 15px 0 10px 0;
+}

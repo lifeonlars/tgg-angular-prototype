@@ -14,14 +14,12 @@
     background: #fff;
     color: $gray-dark-4;
     border: 1px solid $gray-light-1;
-    padding-right: 35px;
+    padding-right: 40px;
     font-weight: 500;
     font-size: 1.2rem;
     border-radius: 3px;
-    transition: background 0.5s linear;
   }
   .searchform .searchbox:focus {
-    background: #fff;
     color: #000;
     border-color: $gray;
     outline: none;
@@ -30,17 +28,15 @@
     color: $gray-dark-4;
   }
   .searchform .btn {
-    background: none;
-    border: none;
-    font-size: 1.75rem;
-    outline: none;
     position: absolute;
-    text-align: center;
-    right: inherit;
-    right: 10px;
-    top: 7px;
+    right: 9px;
+    top: 6px;
     width: 30px;
     padding: 0;
+    font-size: 1.5rem;
+    text-align: center;
+    background: none;
+    border: none;
     box-shadow: none;
     outline: none;
   }
@@ -56,19 +52,18 @@
     margin-top: 12px;
   }
 }
+/* Override default placeholder text colour */
 
 .searchbox::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: $gray-dark-1;
   opacity: 1; /* Firefox */
 }
-
 .searchbox:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: red;
+  color: $gray-dark-1;
 }
-
 .searchbox::-ms-input-placeholder {
   /* Microsoft Edge */
-  color: red;
+  color: $gray-dark-1;
 }
