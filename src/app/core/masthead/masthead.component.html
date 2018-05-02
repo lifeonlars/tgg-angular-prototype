@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div class="masthead-header row">
+  <div class="masthead row">
 
     <!-- Mobile Logo - shown only on mobile -->
     <div class="col-xs-2 padd-right-0 visible-xs nav-toggle text-left" data-ng-init="$root.mobileMenu = false">
@@ -26,32 +26,27 @@
     </section>
 
 
-    <nav class="col-sm-2 col-lg-4 padd-0 hidden-xs supplementary">
-      <ul class="padd-top-10 small-nav">
-        <li>
-          <a href="/storelocator" title="Store Trading hours &amp; Locations">
-            <span class="hidden-sm hidden-md">Store Locator &amp; Trading Hours</span>
-            <i class="fa fa-map-marker visible-sm visible-md"></i>
-          </a>
-        </li>
-        <li ng-hide="isLoggedIn()" class="borderleft">
-          <a href="/login" title="Login or register">
-            <span class="hidden-sm hidden-md">Login</span>
-            <i class="fa fa-user visible-sm visible-md"></i>
-          </a>
-          <span class="hidden-sm hidden-md"> or </span>
-          <a href="/signup" class="hidden-sm hidden-md">
-            Register
-          </a>
-        </li>
-      </ul>
+    <nav class="col-sm-4 col-lg-4 col-lg-offset-2 padd-top-10 nav-secondary">
+      <div class="col-sm-6 padd-left-0 padd-right-5">
+        <i class="nav-secondary-icon text-size-200 ggdsicon-storeselector"></i>
+        <b>Hoppers Crossing
+          <i class="ggdsicon-angle-down vert-align-15 text-info-sat"></i>
+        </b>
+        <span>Opens at 10am</span>
+      </div>
+      <div class="col-sm-5 padd-left-0 padd-right-5 ">
+        <i class="nav-secondary-icon ggdsicon-user-slim-o"></i>
+        <b>Hi, Sign in
+          <i class="ggdsicon-angle-down vert-align-15 text-info-sat"></i>
+        </b>
+        <span>My Account</span>
+      </div>
+      <div class="col-sm-1 padd-left-0 padd-right-0">
+        <app-minicart></app-minicart>
+      </div>
     </nav>
 
 
-    <!-- Full Minicart - Hidden on mobile -->
-    <section class="col-sm-3 col-md-2 minicart-container hidden-xs">
-      <app-minicart></app-minicart>
-    </section>
 
 
     <!-- Alternative simplified minicart icon - shown only on mobile -->

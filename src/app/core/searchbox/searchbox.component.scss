@@ -4,18 +4,20 @@
   /* Adapt Search for Tablet and above */
   .searchform {
     position: relative;
-    margin-top: 15px;
+    margin-top: 5px;
     line-height: 1;
     text-align: left;
   }
   .searchform .searchbox {
     display: block;
     margin: 0;
-    background: $gray-light-4;
+    background: #fff;
     color: $gray-dark-4;
-    border: 1px solid $gray-light-2;
+    border: 1px solid $gray-light-1;
     padding-right: 35px;
-    font-size: 1.2em;
+    font-weight: 500;
+    font-size: 1.2rem;
+    border-radius: 3px;
     transition: background 0.5s linear;
   }
   .searchform .searchbox:focus {
@@ -30,25 +32,43 @@
   .searchform .btn {
     background: none;
     border: none;
-    font-size: 1.5em;
+    font-size: 1.75rem;
     outline: none;
     position: absolute;
     text-align: center;
     right: inherit;
-    right: 5px;
-    top: -1px;
-    width: 28px;
+    right: 10px;
+    top: 7px;
+    width: 30px;
     padding: 0;
     box-shadow: none;
     outline: none;
   }
-  .searchform .btn:hover {
+  .searchform .btn:hover,
+  .searchform .btn:focus {
     color: $brand-info;
+    text-decoration: none;
   }
 }
 
 @media screen and (min-width: $screen-lg) {
   .searchform {
-    margin-top: 18px;
+    margin-top: 12px;
   }
+}
+
+.searchbox::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $gray-dark-1;
+  opacity: 1; /* Firefox */
+}
+
+.searchbox:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: red;
+}
+
+.searchbox::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: red;
 }

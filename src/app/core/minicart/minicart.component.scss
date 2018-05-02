@@ -4,34 +4,36 @@
   position: relative;
   overflow: visible;
   text-transform: uppercase;
-  min-height: 50px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: $gray-darker;
-  background: $gray-light-2;
-  border: none;
-  border-bottom: 4px solid $brand-success;
+  width: 55px;
 }
-.minicart h4 {
-  font-family: $font-family-fancy;
+.minicart.empty .minicart-icon {
+  color: $brand-info;
+}
+.minicart.empty .minicart-badge {
+  display: none;
+}
+
+.minicart.has-products .minicart-icon {
+  color: $brand-success;
+  font-size: 2.3rem;
+}
+.minicart.has-products .minicart-badge {
+  border-radius: 10px;
+  background: $brand-danger;
+  color: #fff;
+  text-align: center;
+  padding: 2px 4px;
   line-height: 1;
-  clear: both;
-  padding: 0 10px 0 0;
-  margin: 0;
-  font-size: 1.3em;
+  font-size: 0.85rem;
   font-weight: 500;
-  vertical-align: middle;
-  text-align: left;
+  position: absolute;
+  top: -3px;
+  right: 6px;
 }
+
 .minicart a,
 .minicart a:hover {
   text-decoration: none;
-}
-.minicart .ggdsicon-cart {
-  color: $brand-success;
-}
-.minicart a:hover .ggdsicon-cart {
-  color: $gray-darker;
 }
 
 // .minicart:hover .minicart-dropdown {
