@@ -7,11 +7,12 @@ import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { ProductApiService } from './shared/services/product-api.service';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
   imports: [BrowserModule, CoreModule, SharedModule, AppRoutingModule],
-  providers: [],
+  providers: [ProductApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

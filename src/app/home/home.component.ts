@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductTileComponent } from './../shared/product-tile/product-tile.component';
+import { Observable } from 'rxjs';
+import { ProductApiService } from './../shared/services/product-api.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +9,12 @@ import { ProductTileComponent } from './../shared/product-tile/product-tile.comp
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  product$: Observable<any>;
+  constructor(private productApiService: ProductApiService) {}
 
-  ngOnInit() {}
+  ngOnInit(product$ = this.productApiService.fetchProductById('10010608')) {}
+
+  getProduct() {
+    //
+  }
 }
