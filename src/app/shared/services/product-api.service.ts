@@ -17,8 +17,10 @@ export class ProductApiService {
   constructor(private afs: AngularFirestore) {}
 
   fetchProductById(id: string) {
-    this.afs.doc<any>('/products/' + id);
+    this.productDoc = this.afs.doc<any>('products/' + id);
     this.product$ = this.productDoc.valueChanges();
+    console.log('Product');
+    console.log(this.product$);
     return this.product$;
   }
 

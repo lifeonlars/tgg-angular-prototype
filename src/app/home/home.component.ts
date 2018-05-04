@@ -12,7 +12,11 @@ export class HomeComponent implements OnInit {
   product$: Observable<any>;
   constructor(private productApiService: ProductApiService) {}
 
-  ngOnInit(product$ = this.productApiService.fetchProductById('10010608')) {}
+  ngOnInit() {
+    this.product$ = this.productApiService.fetchProductById('10010608');
+    this.product$.subscribe(product => console.log(product));
+    console.log('in home');
+  }
 
   getProduct() {
     //
