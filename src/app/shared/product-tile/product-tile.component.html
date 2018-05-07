@@ -1,7 +1,8 @@
-<main class="producttile" data-sku="50031109" data-name="50&quot;(127cm) FHD LED LCD TV" data-brand="Samsung" data-category="LED TVs"
-  data-price="748.00" data-event="" data-tggeventcategory="" data-tggeventaction="" data-tggeventlabel="" data-position="">
+<main class="producttile" attr.data-sku="{{product.sku}}" attr.data-name="{{product.name}}" attr.data-brand="{{product.brand}}"
+  attr.data-category="{{product.categories[2]}}" attr.data-price="{{product.price}}" data-event="" data-tggeventcategory=""
+  data-tggeventaction="" data-tggeventlabel="" data-position="">
   <header class="producttile-header">
-    <h4 class="producttile-name" title="Samsung 50&quot;(127cm) FHD LED LCD TV">
+    <h4 class="producttile-name" title="{{product.name}}">
       <a href="#">{{product.name}}</a>
     </h4>
     <div class="producttile-model">{{product.model}}</div>
@@ -52,16 +53,22 @@
     </div>
   </section>
   <section class="producttile-features">
-    <ul class="list-dash">
-      <li>LED Super bright panel</li>
-      <li>Full HD 100Hz Smart TV</li>
-      <li>Quick and easy access to Netflix, Youtube…</li>
+    <ul class="list-dash" *ngIf="isArray(product.features); else singleFeature">
+      <li *ngFor="let feature of product.features; let x=index;"> {{feature}}
+      </li>
     </ul>
+    <ng-template #singleFeature>
+      <ul>
+        <li>
+          {{product.features}}
+        </li>
+      </ul>
+    </ng-template>
   </section>
   <div class="pricepoint clearfix">
     <span class="pricepoint-price">
-      <i class="curr">$</i>748
-      <i class="dec">.00</i>
+      <i class="curr">$</i>{{wholePrice(product.price)}}
+      <i class="dec">{{decimalPrice(product.price)}}</i>
     </span>
   </div>
   <footer class="producttile-footer" data-state="0">

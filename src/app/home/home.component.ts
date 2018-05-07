@@ -15,14 +15,10 @@ export class HomeComponent implements OnInit {
   constructor(private productApiService: ProductApiService) {}
 
   ngOnInit() {
-    this.product$ = this.productApiService
-      .fetchProductById('10010608')
-      .map(x => x);
+    this.product$ = this.productApiService.fetchProductById('10010608');
 
     this.productTileProducts$ = this.productApiService.fetchProducts(4);
-    this.productTileProducts$.subscribe(products => {
-      console.log(products);
-    });
+    this.productTileProducts$.subscribe(products => console.log(products));
   }
 
   getProduct() {
