@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-product-tile',
@@ -6,7 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-tile.component.scss']
 })
 export class ProductTileComponent implements OnInit {
+  // use input from the [product] attribute in the home component which binds to the single product
+  // in the for loop above
+  @Input() product;
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.product);
+  }
+
+  isArray(array) {
+    return Array.isArray(array);
+  }
 }
