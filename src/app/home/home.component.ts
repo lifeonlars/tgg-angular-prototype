@@ -10,13 +10,16 @@ import { ProductApiService } from './../shared/services/product-api.service';
 })
 export class HomeComponent implements OnInit {
   product$: Observable<any>;
+  public products$;
   constructor(private productApiService: ProductApiService) {}
 
   ngOnInit() {
     this.product$ = this.productApiService.fetchProductById('10010608');
-    this.product$.subscribe(product => console.log(product));
-    console.log('in home');
+    this.products$ = this.productApiService.fetchProducts(4);
+    // this.products$.subscribe(x => console.log(x));
   }
+
+
 
   getProduct() {
     //

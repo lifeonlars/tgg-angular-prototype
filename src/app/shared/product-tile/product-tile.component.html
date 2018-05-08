@@ -2,14 +2,28 @@
   data-price="748.00" data-event="" data-tggeventcategory="" data-tggeventaction="" data-tggeventlabel="" data-position="">
   <header class="producttile-header">
     <h4 class="producttile-name" title="Samsung 50&quot;(127cm) FHD LED LCD TV">
-      <a href="#">Samsung 50"(127cm) FHD LED LCD TV</a>
+      <a href="#">{{product.name}}</a>
     </h4>
-    <div class="producttile-model">UA50J5100AW</div>
+    <div class="producttile-model">{{product.model}}</div>
   </header>
   <div class="producttile-imagewrap">
     <a class="producttile-thumb" href="#">
-      <img class="img-responsive fadeInOnHover" src="https://thegoodguys.sirv.com/products/50031109/50031109_115212.PNG?scale.height=200&amp;scale.width=200&amp;canvas.height=200&amp;canvas.width=200&amp;canvas.opacity=0&amp;format=png&amp;png.optimize=true">
-      <img class="img-responsive fadeOutOnHover" src="https://thegoodguys.sirv.com/products/50031109/50031109_115217.PNG?scale.height=200&amp;scale.width=200&amp;canvas.height=200&amp;canvas.width=200&amp;canvas.opacity=0&amp;format=png&amp;png.optimize=true">
+      <img
+
+
+      class="img-responsive fadeInOnHover" src="https://thegoodguys.sirv.com/products/{{product.sku}}/{{product.images[0]}}.PNG?scale.height=200&amp;scale.width=200&amp;canvas.height=200&amp;canvas.width=200&amp;canvas.opacity=0&amp;format=png&amp;png.optimize=true">
+
+      <img
+      *ngIf="product.images.length > 1; else singleImage"
+      class="img-responsive fadeOutOnHover"
+      src="https://thegoodguys.sirv.com/products/{{product.sku}}/{{product.images[1]}}.PNG?scale.height=200&amp;scale.width=200&amp;canvas.height=200&amp;canvas.width=200&amp;canvas.opacity=0&amp;format=png&amp;png.optimize=true"
+
+     >
+      <ng-template #singleImage>
+          <img
+          src="https://thegoodguys.sirv.com/products/{{product.sku}}/{{product.images[0]}}.PNG?scale.height=200&amp;scale.width=200&amp;canvas.height=200&amp;canvas.width=200&amp;canvas.opacity=0&amp;format=png&amp;png.optimize=true">
+      </ng-template>
+
     </a>
   </div>
   <aside class="clearfix padd-bottom-10 padd-top-10">
@@ -44,15 +58,13 @@
   </section>
   <section class="producttile-features">
     <ul class="list-dash">
-      <li>LED Super bright panel</li>
-      <li>Full HD 100Hz Smart TV</li>
-      <li>Quick and easy access to Netflix, Youtube…</li>
+      <li *ngFor="let feature of product.features; let i = index;">{{feature}}</li>
     </ul>
   </section>
   <div class="pricepoint clearfix">
     <span class="pricepoint-price">
-      <i class="curr">$</i>748
-      <i class="dec">.00</i>
+      <i class="curr">$</i>{{wholePrice(product.price)}}
+      <i class="dec">{{decimalPrice(product.price)}}</i>
     </span>
   </div>
   <footer class="producttile-footer" data-state="0">

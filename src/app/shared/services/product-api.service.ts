@@ -6,6 +6,7 @@ import {
 } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { ReturnStatement } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -13,20 +14,24 @@ import { map } from 'rxjs/operators';
 export class ProductApiService {
   private productDoc: AngularFirestoreDocument<any>;
   product$: Observable<any>;
+  public products$: Observable<any>;
 
-  constructor(private afs: AngularFirestore) {}
+  constructor(private afs: AngularFirestore) { }
 
   fetchProductById(id: string) {
     this.productDoc = this.afs.doc<any>('products/' + id);
     this.product$ = this.productDoc.valueChanges();
-    console.log('Product');
-    console.log(this.product$);
+
     return this.product$;
   }
 
-  fetchProductsArrayByIds() {}
+  // return products based on the number passed in
+  fetchProducts(noProducts: number) {
+    return this.afs.collection<any>('product-tiles', ref => ref.limit(noProducts)).valueChanges();
+  }
+  fetchProductsArrayByIds() { }
 
-  fetchProductsByCategory() {}
+  fetchProductsByCategory() { }
 
-  fetchProductsByKeyword() {}
+  fetchProductsByKeyword() { }
 }
