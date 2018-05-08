@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductTileComponent } from './../shared/product-tile/product-tile.component';
 import { Observable } from 'rxjs';
 import { ProductApiService } from './../shared/services/product-api.service';
+import { AngularFirestoreCollection } from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-home',

@@ -1,7 +1,8 @@
-<main class="producttile" data-sku="50031109" data-name="50&quot;(127cm) FHD LED LCD TV" data-brand="Samsung" data-category="LED TVs"
-  data-price="748.00" data-event="" data-tggeventcategory="" data-tggeventaction="" data-tggeventlabel="" data-position="">
+<main class="producttile" attr.data-sku="{{product.sku}}" attr.data-name="{{product.name}}" attr.data-brand="{{product.brand}}"
+  attr.data-category="{{product.categories[2]}}" attr.data-price="{{product.price}}" data-event="" data-tggeventcategory=""
+  data-tggeventaction="" data-tggeventlabel="" data-position="">
   <header class="producttile-header">
-    <h4 class="producttile-name" title="Samsung 50&quot;(127cm) FHD LED LCD TV">
+    <h4 class="producttile-name" title="{{product.name}}">
       <a href="#">{{product.name}}</a>
     </h4>
     <div class="producttile-model">{{product.model}}</div>
@@ -25,6 +26,15 @@
       </ng-template>
 
     </a>
+
+    <ng-template #noImageArray>
+      <a class="producttile-thumb">
+        <img class="img-responsive fadeInOnHover" src="https://thegoodguys.sirv.com/products/{{product.sku}}/{{product.images}}.PNG?scale.height=200&amp;scale.width=200&amp;canvas.height=200&amp;canvas.width=200&amp;canvas.opacity=0&amp;format=png&amp;png.optimize=true">
+        <img class="img-responsive fadeOutOnHover" src="https://thegoodguys.sirv.com/products/{{product.sku}}/{{product.images}}.PNG?scale.height=200&amp;scale.width=200&amp;canvas.height=200&amp;canvas.width=200&amp;canvas.opacity=0&amp;format=png&amp;png.optimize=true">
+      </a>
+    </ng-template>
+
+
   </div>
   <aside class="clearfix padd-bottom-10 padd-top-10">
     <div class="col-xs-6 padd-right-0">
@@ -60,6 +70,13 @@
     <ul class="list-dash">
       <li *ngFor="let feature of product.features; let i = index;">{{feature}}</li>
     </ul>
+    <ng-template #singleFeature>
+      <ul>
+        <li>
+          {{product.features}}
+        </li>
+      </ul>
+    </ng-template>
   </section>
   <div class="pricepoint clearfix">
     <span class="pricepoint-price">
