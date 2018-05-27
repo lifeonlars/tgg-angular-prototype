@@ -16,11 +16,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.product$ = this.productApiService.fetchProductById('10010608');
-    this.products$ = this.productApiService.fetchProducts(4);
+    this.products$ = this.productApiService.fetchProducts(12);
     // this.products$.subscribe(x => console.log(x));
   }
-
-
 
   getProduct() {
     //

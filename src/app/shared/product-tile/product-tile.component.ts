@@ -11,16 +11,15 @@ export class ProductTileComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-
     console.log(this.product);
-
   }
 
-  wholePrice(price){
+  wholePrice(price) {
+    console.log(price.split('.', 1));
     return price.split('.', 1);
   }
 
-  decimalPrice(price){
+  decimalPrice(price) {
     const decimal = price.split('.', 2)[1];
     return decimal ? '.' + decimal : '.00';
   }

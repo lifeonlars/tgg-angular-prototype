@@ -9,22 +9,11 @@
   </header>
   <div class="producttile-imagewrap">
     <a class="producttile-thumb" href="#">
-      <img
-
-
-      class="img-responsive fadeInOnHover" src="https://thegoodguys.sirv.com/products/{{product.sku}}/{{product.images[0]}}.PNG?scale.height=200&amp;scale.width=200&amp;canvas.height=200&amp;canvas.width=200&amp;canvas.opacity=0&amp;format=png&amp;png.optimize=true">
-
-      <img
-      *ngIf="product.images.length > 1; else singleImage"
-      class="img-responsive fadeOutOnHover"
-      src="https://thegoodguys.sirv.com/products/{{product.sku}}/{{product.images[1]}}.PNG?scale.height=200&amp;scale.width=200&amp;canvas.height=200&amp;canvas.width=200&amp;canvas.opacity=0&amp;format=png&amp;png.optimize=true"
-
-     >
+      <img class="img-responsive fadeInOnHover" src="https://thegoodguys.sirv.com/products/{{product.sku}}/{{product.images[0]}}.PNG?scale.height=200&amp;scale.width=200&amp;canvas.height=200&amp;canvas.width=200&amp;canvas.opacity=0&amp;format=png&amp;png.optimize=true">
+      <img *ngIf="product.images.length > 1; else singleImage" class="img-responsive fadeOutOnHover" src="https://thegoodguys.sirv.com/products/{{product.sku}}/{{product.images[1]}}.PNG?scale.height=200&amp;scale.width=200&amp;canvas.height=200&amp;canvas.width=200&amp;canvas.opacity=0&amp;format=png&amp;png.optimize=true">
       <ng-template #singleImage>
-          <img
-          src="https://thegoodguys.sirv.com/products/{{product.sku}}/{{product.images[0]}}.PNG?scale.height=200&amp;scale.width=200&amp;canvas.height=200&amp;canvas.width=200&amp;canvas.opacity=0&amp;format=png&amp;png.optimize=true">
+        <img src="https://thegoodguys.sirv.com/products/{{product.sku}}/{{product.images[0]}}.PNG?scale.height=200&amp;scale.width=200&amp;canvas.height=200&amp;canvas.width=200&amp;canvas.opacity=0&amp;format=png&amp;png.optimize=true">
       </ng-template>
-
     </a>
 
     <ng-template #noImageArray>
@@ -56,7 +45,7 @@
   </aside>
   <section class="producttile-stockstatus clearfix">
     <div class="stockstatus-col">
-      <i class="icon ggdsicon-o-circle-tick available"></i>
+      <i class="icon ggdsicon-o-circle-tick available"></i> 
       Delivered in 3-5
       <br>business days
     </div>
@@ -80,7 +69,8 @@
   </section>
   <div class="pricepoint clearfix">
     <span class="pricepoint-price">
-      <i class="curr">$</i>{{wholePrice(product.price)}}
+      <i class="curr">$</i>
+      <span>{{wholePrice(product.price)}}</span>
       <i class="dec">{{decimalPrice(product.price)}}</i>
     </span>
   </div>
