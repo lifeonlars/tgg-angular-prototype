@@ -14,9 +14,10 @@ import { ProductApiService } from './shared/services/product-api.service';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { CategoryListingComponent } from './category-listing/category-listing.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, CategoryListingComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

@@ -5,8 +5,8 @@
               <span class="menu-main-label">Browse Products <i class="fa fa-angle-down"></i></span>
               <ul class="col-sm-3 menu-main-l1 clearfix">
                   <li data-ng-repeat="category in categories" data-ng-mouseenter="showL2 = true" data-ng-mouseleave="showL2 = false">
-
-                      <a href="/category/category.id">category.name<i class="fa fa-angle-right pull-right"></i></a>
+                    <span  *ngFor="let category of routes; index as i">
+                      <a routerLink="/category-listing" >1st Level Category<i class="fa fa-angle-right pull-right"></i></a></span>
                       <ul class="menu-main-l2 col-sm-6 col-md-3">
                           <li data-ng-repeat="subcategory in category.subcategories" data-ng-mouseenter="showL3 = true" data-ng-mouseleave="showL3 = false">
 
