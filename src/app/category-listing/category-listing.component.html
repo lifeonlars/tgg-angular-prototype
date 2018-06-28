@@ -1,3 +1,551 @@
-<p>
-  category-listing works!
-</p>
+
+
+
+<section class="container intro padd-top-15 padd-bottom-15">
+  <div class="row">
+    <div class="col-sm-6 col-lg-9">
+      <h2 class="text-normal disp-inlblock ng-binding">Results for LED TVs</h2> &nbsp;
+      <!-- ngIf: products.length > 0 -->
+      <span class="badge text-size-75 ng-binding ng-scope" data-ng-if="products.length > 0">
+        90
+      </span>
+      <!-- end ngIf: products.length > 0 -->
+    </div>
+    <div class="col-sm-6 col-lg-3 padd-top-15 text-right text-medium">
+      <span class="disp-inlblock padd-right-15">
+        <a class="onpage-link" href="#">Buying Guides</a>
+        <span class="badge text-size-75">3</span>
+      </span>
+      <span class="disp-inlblock">
+        <a class="onpage-link" href="#">Blog Articles</a>
+        <span class="badge">12</span>
+      </span>
+    </div>
+  </div>
+  <!-- ngIf: category.description -->
+  <p class="clear marg-bottom-0 ng-binding ng-scope" data-ng-bind-html="category.description" data-ng-if="category.description">Buy the best LED TVs in Australia online or in store from The Good Guys. You’ll get a good deal on the latest television
+    technology – High Definition, Full High Definition, 4K and Ultra High Definition, 3D, and Smart TVs – for the ultimate
+    in home entertainment and gaming on small, medium and big screen TVs from the best brands – Samsung, LG, Panasonic, Sony,
+    Hisense and more.</p>
+  <!-- end ngIf: category.description -->
+</section>
+
+<div class="container ng-scope" id="maincontent" ui-scrollpoint="">
+  <div class="row">
+
+    <aside class="searchfilters col-sm-3 hidden-xs hidden-sm ng-scope" data-ng-if="products.length > 0">
+
+      <!-- ngIf: categorytier === 'L2' || categorytier === 'L3' -->
+      <section class="categories facetgroup ng-scope" data-ng-if="categorytier === 'L2' || categorytier === 'L3'">
+        <h4 data-ng-click="categoryshow=!categoryshow" role="button" tabindex="0">
+          Shop
+          <!-- ngIf: categorytier === 'L2' -->
+          <!-- ngIf: categorytier === 'L3' -->
+          <span data-ng-if="categorytier === 'L3'" class="ng-binding ng-scope">TVs</span>
+          <!-- end ngIf: categorytier === 'L3' -->
+          <i class="fa fa-minus pull-right text-info-sat" data-ng-show="categoryshow" aria-hidden="false"></i>
+          <i class="fa fa-plus pull-right text-info-sat ng-hide" data-ng-show="!categoryshow" aria-hidden="true"></i>
+        </h4>
+        <div data-ng-show="categoryshow" aria-hidden="false" class="">
+          <!-- ngIf: categorytier === 'L2' -->
+        </div>
+        <!-- ngIf: categorytier === 'L3' -->
+        <div data-ng-if="categorytier === 'L3'" data-ng-show="categoryshow" class="ng-scope" aria-hidden="false">
+          <ul data-ng-hide="category._id == 186" aria-hidden="true" class="ng-hide">
+            <li data-ng-init="count = countProducts(category._id)" data-ng-hide="count.length == 0" aria-hidden="false" class="">
+              <a data-ng-href="#!/category/186" class="ng-binding" href="#!/category/186">LED TVs (
+                <span class="count ng-binding" data-ng-bind="count.length">83</span>) </a>
+            </li>
+          </ul>
+          <!-- ngIf: category._id == 186 -->
+          <ul data-ng-if="category._id == 186" class="ng-scope">
+            <li>
+              <a data-ng-href="#!/category/186" href="#!/category/186">Ultra HD TVs Over 60 inches </a>
+              <span class="count">(26)</span>
+            </li>
+            <li>
+              <a data-ng-href="#!/category/186" href="#!/category/186">Ultra HD TVs 48 to 60 inches </a>
+              <span class="count">(23)</span>
+            </li>
+            <li>
+              <a data-ng-href="#!/category/186" href="#!/category/186">Ultra HD TVs Under 48 Inches</a>
+              <span class="count">(5)</span>
+            </li>
+          </ul>
+          <!-- end ngIf: category._id == 186 -->
+
+        </div>
+        <!-- end ngIf: categorytier === 'L3' -->
+      </section>
+      <!-- end ngIf: categorytier === 'L2' || categorytier === 'L3' -->
+
+      <!-- ngIf: filteredProducts.length > 0 -->
+      <section class="brand facetgroup ng-scope expanded" data-ng-class="{'expanded': showHide}" data-ng-if="filteredProducts.length > 0"
+        data-ng-init="showHide = true">
+        <h4 data-ng-click="showHide=!showHide" role="button" tabindex="0">Brand
+          <i class="fa fa-minus pull-right text-info-sat" data-ng-show="showHide" aria-hidden="false"></i>
+          <i class="fa fa-plus pull-right text-info-sat ng-hide" data-ng-hide="showHide" aria-hidden="true"></i>
+        </h4>
+        <div data-ng-show="showHide" aria-hidden="false" class="">
+          <div data-ng-init="facets['brand']={}">
+            <!-- ngRepeat: opt in totalBrands=(getOptionsFor('brand')) | limitTo: maxBrands -->
+            <!-- ngIf: (products
+                                  | filter:searchTerm
+                                  | filter:count('brand',opt)
+                                  | rangeFilter:pricerange
+                                  | screensizeFilter: screensizerange
+                                  | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                                  | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                                  | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                                  ).length > 0 -->
+            <label class="checkbox ng-binding ng-scope" data-ng-repeat="opt in totalBrands=(getOptionsFor('brand')) | limitTo: maxBrands"
+              data-ng-if="(products
+                                  | filter:searchTerm
+                                  | filter:count('brand',opt)
+                                  | rangeFilter:pricerange
+                                  | screensizeFilter: screensizerange
+                                  | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                                  | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                                  | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                                  ).length > 0">
+              <input type="checkbox" data-ng-model="facets['brand'][opt]" class="ng-pristine ng-untouched ng-valid ng-empty" aria-invalid="false"> Sony
+              <span class="count ng-binding">
+                (8)
+              </span>
+            </label>
+            <!-- end ngIf: (products
+                                  | filter:searchTerm
+                                  | filter:count('brand',opt)
+                                  | rangeFilter:pricerange
+                                  | screensizeFilter: screensizerange
+                                  | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                                  | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                                  | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                                  ).length > 0 -->
+            <!-- end ngRepeat: opt in totalBrands=(getOptionsFor('brand')) | limitTo: maxBrands -->
+            <!-- ngIf: (products
+                                  | filter:searchTerm
+                                  | filter:count('brand',opt)
+                                  | rangeFilter:pricerange
+                                  | screensizeFilter: screensizerange
+                                  | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                                  | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                                  | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                                  ).length > 0 -->
+            <label class="checkbox ng-binding ng-scope" data-ng-repeat="opt in totalBrands=(getOptionsFor('brand')) | limitTo: maxBrands"
+              data-ng-if="(products
+                                  | filter:searchTerm
+                                  | filter:count('brand',opt)
+                                  | rangeFilter:pricerange
+                                  | screensizeFilter: screensizerange
+                                  | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                                  | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                                  | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                                  ).length > 0">
+              <input type="checkbox" data-ng-model="facets['brand'][opt]" class="ng-pristine ng-untouched ng-valid ng-empty" aria-invalid="false"> LG
+              <span class="count ng-binding">
+                (18)
+              </span>
+            </label>
+            <!-- end ngIf: (products
+                                  | filter:searchTerm
+                                  | filter:count('brand',opt)
+                                  | rangeFilter:pricerange
+                                  | screensizeFilter: screensizerange
+                                  | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                                  | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                                  | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                                  ).length > 0 -->
+            <!-- end ngRepeat: opt in totalBrands=(getOptionsFor('brand')) | limitTo: maxBrands -->
+            <!-- ngIf: (products
+                                  | filter:searchTerm
+                                  | filter:count('brand',opt)
+                                  | rangeFilter:pricerange
+                                  | screensizeFilter: screensizerange
+                                  | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                                  | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                                  | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                                  ).length > 0 -->
+            <label class="checkbox ng-binding ng-scope" data-ng-repeat="opt in totalBrands=(getOptionsFor('brand')) | limitTo: maxBrands"
+              data-ng-if="(products
+                                  | filter:searchTerm
+                                  | filter:count('brand',opt)
+                                  | rangeFilter:pricerange
+                                  | screensizeFilter: screensizerange
+                                  | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                                  | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                                  | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                                  ).length > 0">
+              <input type="checkbox" data-ng-model="facets['brand'][opt]" class="ng-pristine ng-untouched ng-valid ng-empty" aria-invalid="false"> Samsung
+              <span class="count ng-binding">
+                (23)
+              </span>
+            </label>
+            <!-- end ngIf: (products
+                                  | filter:searchTerm
+                                  | filter:count('brand',opt)
+                                  | rangeFilter:pricerange
+                                  | screensizeFilter: screensizerange
+                                  | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                                  | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                                  | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                                  ).length > 0 -->
+            <!-- end ngRepeat: opt in totalBrands=(getOptionsFor('brand')) | limitTo: maxBrands -->
+            <!-- ngIf: (products
+                                  | filter:searchTerm
+                                  | filter:count('brand',opt)
+                                  | rangeFilter:pricerange
+                                  | screensizeFilter: screensizerange
+                                  | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                                  | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                                  | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                                  ).length > 0 -->
+            <label class="checkbox ng-binding ng-scope" data-ng-repeat="opt in totalBrands=(getOptionsFor('brand')) | limitTo: maxBrands"
+              data-ng-if="(products
+                                  | filter:searchTerm
+                                  | filter:count('brand',opt)
+                                  | rangeFilter:pricerange
+                                  | screensizeFilter: screensizerange
+                                  | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                                  | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                                  | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                                  ).length > 0">
+              <input type="checkbox" data-ng-model="facets['brand'][opt]" class="ng-pristine ng-untouched ng-valid ng-empty" aria-invalid="false"> GVA
+              <span class="count ng-binding">
+                (7)
+              </span>
+            </label>
+            <!-- end ngIf: (products
+                                  | filter:searchTerm
+                                  | filter:count('brand',opt)
+                                  | rangeFilter:pricerange
+                                  | screensizeFilter: screensizerange
+                                  | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                                  | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                                  | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                                  ).length > 0 -->
+            <!-- end ngRepeat: opt in totalBrands=(getOptionsFor('brand')) | limitTo: maxBrands -->
+            <!-- ngIf: (products
+                                  | filter:searchTerm
+                                  | filter:count('brand',opt)
+                                  | rangeFilter:pricerange
+                                  | screensizeFilter: screensizerange
+                                  | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                                  | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                                  | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                                  ).length > 0 -->
+            <label class="checkbox ng-binding ng-scope" data-ng-repeat="opt in totalBrands=(getOptionsFor('brand')) | limitTo: maxBrands"
+              data-ng-if="(products
+                                  | filter:searchTerm
+                                  | filter:count('brand',opt)
+                                  | rangeFilter:pricerange
+                                  | screensizeFilter: screensizerange
+                                  | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                                  | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                                  | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                                  ).length > 0">
+              <input type="checkbox" data-ng-model="facets['brand'][opt]" class="ng-pristine ng-untouched ng-valid ng-empty" aria-invalid="false"> TCL
+              <span class="count ng-binding">
+                (9)
+              </span>
+            </label>
+            <!-- end ngIf: (products
+                                  | filter:searchTerm
+                                  | filter:count('brand',opt)
+                                  | rangeFilter:pricerange
+                                  | screensizeFilter: screensizerange
+                                  | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                                  | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                                  | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                                  ).length > 0 -->
+            <!-- end ngRepeat: opt in totalBrands=(getOptionsFor('brand')) | limitTo: maxBrands -->
+            <div class="onpage-link text-medium text-right" data-ng-show="maxBrands === 5 &amp;&amp; getOptionsFor('brand').length > 5"
+              data-ng-click="maxBrands = 999" role="button" tabindex="0" aria-hidden="false">Show More
+            </div>
+            <div class="onpage-link text-medium text-right ng-hide" data-ng-show="maxBrands > 5" data-ng-click="maxBrands = 5" role="button"
+              tabindex="0" aria-hidden="true">Show Less
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end ngIf: filteredProducts.length > 0 -->
+
+
+      <!-- ngIf: filteredProducts.length > 0 -->
+      <section class="price facetgroup ng-scope expanded" data-ng-class="{'expanded': showHide}" data-ng-if="filteredProducts.length > 0"
+        data-ng-init="showHide=true">
+        <h4 data-ng-click="showHide=!showHide" role="button" tabindex="0">Price
+          <i class="fa fa-minus pull-right text-info-sat" data-ng-show="showHide" aria-hidden="false"></i>
+          <i class="fa fa-plus pull-right text-info-sat ng-hide" data-ng-hide="showHide" aria-hidden="true"></i>
+        </h4>
+
+        <div data-ng-show="showHide" aria-hidden="false" class="">
+          <!-- ngRepeat: range in priceFacets -->
+          <!-- ngIf: (products
+                              | filter:searchTerm
+                              | filter:filterByProperties
+                              | rangeFilter:range
+                              | screensizeFilter: screensizerange
+                              | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                              | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                              | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                              ).length > 0 -->
+          <label class="checkbox ng-binding ng-scope" data-ng-repeat="range in priceFacets" data-ng-if="(products
+                              | filter:searchTerm
+                              | filter:filterByProperties
+                              | rangeFilter:range
+                              | screensizeFilter: screensizerange
+                              | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                              | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                              | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                              ).length > 0">
+            <input type="checkbox" data-ng-click="setPricerange($index, priceFacets, range.min, range.max)" data-ng-model="range.selected"
+              class="ng-pristine ng-untouched ng-valid ng-empty" aria-invalid="false"> $200-$500
+            <span class="count ng-binding">
+              (20)
+            </span>
+
+          </label>
+          <!-- end ngIf: (products
+                              | filter:searchTerm
+                              | filter:filterByProperties
+                              | rangeFilter:range
+                              | screensizeFilter: screensizerange
+                              | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                              | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                              | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                              ).length > 0 -->
+          <!-- end ngRepeat: range in priceFacets -->
+          <!-- ngIf: (products
+                              | filter:searchTerm
+                              | filter:filterByProperties
+                              | rangeFilter:range
+                              | screensizeFilter: screensizerange
+                              | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                              | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                              | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                              ).length > 0 -->
+          <label class="checkbox ng-binding ng-scope" data-ng-repeat="range in priceFacets" data-ng-if="(products
+                              | filter:searchTerm
+                              | filter:filterByProperties
+                              | rangeFilter:range
+                              | screensizeFilter: screensizerange
+                              | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                              | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                              | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                              ).length > 0">
+            <input type="checkbox" data-ng-click="setPricerange($index, priceFacets, range.min, range.max)" data-ng-model="range.selected"
+              class="ng-pristine ng-untouched ng-valid ng-empty" aria-invalid="false"> $500-$800
+            <span class="count ng-binding">
+              (15)
+            </span>
+
+          </label>
+          <!-- end ngIf: (products
+                              | filter:searchTerm
+                              | filter:filterByProperties
+                              | rangeFilter:range
+                              | screensizeFilter: screensizerange
+                              | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                              | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                              | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                              ).length > 0 -->
+          <!-- end ngRepeat: range in priceFacets -->
+          <!-- ngIf: (products
+                              | filter:searchTerm
+                              | filter:filterByProperties
+                              | rangeFilter:range
+                              | screensizeFilter: screensizerange
+                              | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                              | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                              | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                              ).length > 0 -->
+          <label class="checkbox ng-binding ng-scope" data-ng-repeat="range in priceFacets" data-ng-if="(products
+                              | filter:searchTerm
+                              | filter:filterByProperties
+                              | rangeFilter:range
+                              | screensizeFilter: screensizerange
+                              | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                              | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                              | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                              ).length > 0">
+            <input type="checkbox" data-ng-click="setPricerange($index, priceFacets, range.min, range.max)" data-ng-model="range.selected"
+              class="ng-pristine ng-untouched ng-valid ng-empty" aria-invalid="false"> $800-$1000
+            <span class="count ng-binding">
+              (11)
+            </span>
+
+          </label>
+          <!-- end ngIf: (products
+                              | filter:searchTerm
+                              | filter:filterByProperties
+                              | rangeFilter:range
+                              | screensizeFilter: screensizerange
+                              | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                              | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                              | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                              ).length > 0 -->
+          <!-- end ngRepeat: range in priceFacets -->
+          <!-- ngIf: (products
+                              | filter:searchTerm
+                              | filter:filterByProperties
+                              | rangeFilter:range
+                              | screensizeFilter: screensizerange
+                              | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                              | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                              | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                              ).length > 0 -->
+          <label class="checkbox ng-binding ng-scope" data-ng-repeat="range in priceFacets" data-ng-if="(products
+                              | filter:searchTerm
+                              | filter:filterByProperties
+                              | rangeFilter:range
+                              | screensizeFilter: screensizerange
+                              | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                              | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                              | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                              ).length > 0">
+            <input type="checkbox" data-ng-click="setPricerange($index, priceFacets, range.min, range.max)" data-ng-model="range.selected"
+              class="ng-pristine ng-untouched ng-valid ng-empty" aria-invalid="false"> $1000-$2000
+            <span class="count ng-binding">
+              (24)
+            </span>
+
+          </label>
+          <!-- end ngIf: (products
+                              | filter:searchTerm
+                              | filter:filterByProperties
+                              | rangeFilter:range
+                              | screensizeFilter: screensizerange
+                              | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                              | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                              | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                              ).length > 0 -->
+          <!-- end ngRepeat: range in priceFacets -->
+          <!-- ngIf: (products
+                              | filter:searchTerm
+                              | filter:filterByProperties
+                              | rangeFilter:range
+                              | screensizeFilter: screensizerange
+                              | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                              | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                              | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                              ).length > 0 -->
+          <label class="checkbox ng-binding ng-scope" data-ng-repeat="range in priceFacets" data-ng-if="(products
+                              | filter:searchTerm
+                              | filter:filterByProperties
+                              | rangeFilter:range
+                              | screensizeFilter: screensizerange
+                              | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                              | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                              | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                              ).length > 0">
+            <input type="checkbox" data-ng-click="setPricerange($index, priceFacets, range.min, range.max)" data-ng-model="range.selected"
+              class="ng-pristine ng-untouched ng-valid ng-empty" aria-invalid="false"> $2000 and above
+            <span class="count ng-binding">
+              (20)
+            </span>
+
+          </label>
+          <!-- end ngIf: (products
+                              | filter:searchTerm
+                              | filter:filterByProperties
+                              | rangeFilter:range
+                              | screensizeFilter: screensizerange
+                              | weblabelFilter: activeWeblabels:!activeWeblabels.active
+                              | techspecFilter: activespecFacets.screendefinition:!activespecFacets.screendefinition.active
+                              | techspecFilter: activespecFacets.energyrating:!activespecFacets.energyrating.active
+                              ).length > 0 -->
+          <!-- end ngRepeat: range in priceFacets -->
+
+          <div class="clearfix">
+            <form class="form clearfix padd-top-15 ng-pristine ng-valid" role="form">
+              <div class="col-sm-4 padd-left-0 padd-right-0 form-group form-group-sm">
+                <input class="form-control ng-pristine ng-untouched ng-valid ng-empty" role="textbox" aria-label="Lower Bound" type="number"
+                  placeholder="$" data-ng-model="curstomPricerangeMin" aria-invalid="false">
+              </div>
+              <span class="col-sm-1 padd-left-5 padd-right-5"> - </span>
+              <div class="col-sm-4 padd-left-0 padd-right-0 form-group form-group-sm">
+                <input class="form-control ng-pristine ng-untouched ng-valid ng-empty" role="textbox" aria-label="Upper Bound" type="number"
+                  placeholder="$" data-ng-model="curstomPricerangeMax" aria-invalid="false">
+              </div>
+              <div class="col-sm-3 padd-left-5 form-group form-group-sm">
+                <button class="btn btn-sm btn-info" data-ng-click="SetCurstomPrice(curstomPricerangeMin, curstomPricerangeMax)">GO</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- end ngIf: filteredProducts.length > 0 -->
+
+
+      <!-- ngIf: filteredProducts.length > 0 -->
+      <section class="facetgroup ng-scope expanded" data-ng-class="{'expanded': showHide}" data-ng-if="filteredProducts.length > 0"
+        data-ng-init="showHide=true">
+        <h4 data-ng-click="showHide=!showHide" role="button" tabindex="0">Sales &amp; Offers
+          <i class="fa fa-minus pull-right text-info-sat" data-ng-show="showHide" aria-hidden="false"></i>
+          <i class="fa fa-plus pull-right text-info-sat ng-hide" data-ng-hide="showHide" aria-hidden="true"></i>
+        </h4>
+        <aside data-ng-show="showHide" aria-hidden="false" class="">
+          <label class="checkbox">
+            <input type="checkbox">Bonus Offer
+            <span class="count">(11)</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox">Cashback
+            <span class="count">(7)</span>
+          </label>
+        </aside>
+      </section>
+      <!-- end ngIf: filteredProducts.length > 0 -->
+
+      <!-- ngIf: filteredProducts.length > 0 -->
+      <section class="facetgroup ng-scope expanded" data-ng-class="{'expanded': showHide}" data-ng-if="filteredProducts.length > 0"
+        data-ng-init="showHide=true; showMoreFeatured = false">
+        <h4 data-ng-click="showHide=!showHide" role="button" tabindex="0">Featured
+          <i class="fa fa-minus pull-right text-info-sat" data-ng-show="showHide" aria-hidden="false"></i>
+          <i class="fa fa-plus pull-right text-info-sat ng-hide" data-ng-hide="showHide" aria-hidden="true"></i>
+        </h4>
+        <aside data-ng-show="showHide" aria-hidden="false" class="">
+          <label class="checkbox">
+            <input type="checkbox">Bargain Buy
+            <span class="count">(7)</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox">As Advertised
+            <span class="count">(27)</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox">New
+            <span class="count">(3)</span>
+          </label>
+          <label class="checkbox ng-hide" data-ng-show="showMoreFeatured" aria-hidden="true">
+            <input type="checkbox">Only at the Good Guys
+            <span class="count">(9)</span>
+          </label>
+          <label class="checkbox ng-hide" data-ng-show="showMoreFeatured" aria-hidden="true">
+            <input type="checkbox">Online Only
+            <span class="count">(5)</span>
+          </label>
+        </aside>
+        <div class="onpage-link text-medium text-right" data-ng-show="!showMoreFeatured" data-ng-click="showMoreFeatured = true"
+          role="button" tabindex="0" aria-hidden="false">Show More
+        </div>
+        <div class="onpage-link text-medium text-right ng-hide" data-ng-show="showMoreFeatured" data-ng-click="showMoreFeatured = false"
+          role="button" tabindex="0" aria-hidden="true">Show Less
+        </div>
+      </section>
+      <!-- end ngIf: filteredProducts.length > 0 -->
+
+
+
+
+    </aside>
+
+    <div class="col-sm-12 col-md-9">
+
+
+      <app-product-tile class="row" *ngFor="let product of productTiles$ | async; let i=index;" [product]="product" class="producttile-wrap col-sm-6 col-md-4 col-lg-4 marg-bottom-30">
+      </app-product-tile>
+
+    </div>
+  </div>

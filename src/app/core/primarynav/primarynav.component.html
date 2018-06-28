@@ -4,24 +4,25 @@
           <li class="menu-main-item menu-main-dropdown menu-main-products">
               <span class="menu-main-label">Browse Products <i class="fa fa-angle-down"></i></span>
               <ul class="col-sm-3 menu-main-l1 clearfix">
-                  <li data-ng-repeat="category in categories" data-ng-mouseenter="showL2 = true" data-ng-mouseleave="showL2 = false">
-                    <span  *ngFor="let category of routes; index as i">
-                      <a routerLink="/category-listing" >1st Level Category<i class="fa fa-angle-right pull-right"></i></a></span>
-                      <ul class="menu-main-l2 col-sm-6 col-md-3">
-                          <li data-ng-repeat="subcategory in category.subcategories" data-ng-mouseenter="showL3 = true" data-ng-mouseleave="showL3 = false">
+                  <li data-ng-mouseenter="showL2 = true" data-ng-mouseleave="showL2 = false" *ngFor="let category of catgoriesArray; index as i">
 
-                              <a href="/category/subcategory.id">subcategory.name</a>
+                      <a  >{{category.name}}<i class="fa fa-angle-right pull-right"></i></a
+                        >
+                      <ul class="menu-main-l2 col-sm-6 col-md-3">
+                          <li *ngFor="let subcategory of category.subCategories" data-ng-mouseenter="showL3 = true" data-ng-mouseleave="showL3 = false">
+
+                              <a [routerLink]="['/category-listing', subcategory.id]">{{subcategory.name}}</a>
                               <div class="menu-main-l3" data-ng-class="{'wide': subcategory.subcategories.length > 11, 'expand': showL3}">
-                                  <ul class="col-sm-6" data-ng-if="subcategory.subcategories">
-                                      <li data-ng-repeat="subsubcategory in subcategory.subcategories | limitTo:11">
-                                          <a href="/category/">subsubcategory.name</a>
+                                  <ul class="col-sm-6" *ngIf="subcategory.subCategories">
+                                      <li *ngFor="let subsubcategory of subcategory.subCategories">
+                                          <a href="/category/">{{subsubcategory.name}}</a>
                                       </li>
                                   </ul>
-                                  <ul class="col-sm-6">
+                                  <!-- <ul class="col-sm-6">
                                       <li data-ng-repeat="subsubcategory in subcategory.subcategories" data-ng-if="$index > 10">
                                           <a href="/category/">subsubcategory.name</a>
                                       </li>
-                                  </ul>
+                                  </ul> -->
                               </div><!-- /L3 -->
 
                           </li>

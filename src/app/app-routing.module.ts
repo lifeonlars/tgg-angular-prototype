@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 const routes: Routes = [
 
   { path: 'category-listing', component: CategoryListingComponent },
+  {path: 'category-listing/:id', component: CategoryListingComponent, runGuardsAndResolvers: 'always'},
   { path: '', component: HomeComponent }
 ];
 
