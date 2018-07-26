@@ -2,6 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0-rc.4.
 
+## Pre-requistes
+NOTE: It's recommended that you add the Git client to the Windows Path so you can use it directly from regular command line/prompt. This is an option during install with most installers.
+
+[Git client](https://gitforwindows.org/)
+[Node.js]https://nodejs.org/download/
+Cmder Recommended console emulator replacement for cmd.exe
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -28,11 +35,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## MODULES
 
-### Shared Module 
+### Shared Module
 
 Contains common layout elements like masthead, menus, footer as well as other re-usable components
 
-### Products Module 
+### Products Module
 
 Contains products page, search/category listing pages
 
@@ -44,11 +51,11 @@ Contains cart, checkout, order confirmation pages.
 
 Contains My Account sections
 
-## COMPONENTS 
+## COMPONENTS
 
-### Re-usable components 
+### Re-usable components
 
- * Product Tile 
+ * Product Tile
     - Standard Tile (grid view)
     - List Tile (should list view of tiles be a separate component?)
     - Slim Tile (for certona style widgets and cross sell in cart)
@@ -56,20 +63,20 @@ Contains My Account sections
  * Banner slider (homepage)
  * Pagination component
  * Postcode search
- * Store listing 
+ * Store listing
 
 ### UI / Shared Components
 
- - Masthead 
+ - Masthead
    * Search box
    * Minicart
-   * Main Navbar (main menu) 
+   * Main Navbar (main menu)
      - Products menu
      - Brands menu
      - Deals & offers menu
-     - Installation & services menu 
+     - Installation & services menu
    * Mobile menu
-   * Set store   
+   * Set store
  - Footer
 
 
@@ -87,20 +94,20 @@ Contains My Account sections
  - Calculate delivery cost (given type/postcode)
  - Pick-up options (given store ID => store id requires postcode)
  - Load selected fulfillment options (if delivery or pick-up is selected, load previous options)
- 
- *Product API* 
- 
+
+ *Product API*
+
   - Single product by ID
   - Products by category
   - Products by keyword (name only)
   - Products by IDs (array of IDs)
-  
+
   *Postcode Zone API*
    - Return delivery zone based on postcode (metro, local, regional-a, regional-b, remote)
-   
+
   *Store API*
    - Load single store information based on ID (Address, opening hours, phone number etc.)
-   
+
   *Category API*
    - Load single category information based on ID
-  
+
