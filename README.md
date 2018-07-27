@@ -8,8 +8,8 @@ NOTE: It's recommended that you add the Git client to the Windows Path so you ca
 * [Git client](https://gitforwindows.org/)
 * [Node.js]https://nodejs.org/download/ (Node 10.x.x preferred)
 * Windows Build Tools (https://www.npmjs.com/package/windows-build-tools)
-  This will replace the need for installing Visual C++ and Python 2.7
-  `npm install --global --production windows-build-tools`
+   - This will replace the need for installing Visual C++ and Python 2.7
+   - `npm install --global --production windows-build-tools`
 * Cmder Recommended console emulator replacement for cmd.exe (nice to have, not required)
 
 *Install the following via command line using the global flag*
