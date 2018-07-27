@@ -5,9 +5,32 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Pre-requistes
 NOTE: It's recommended that you add the Git client to the Windows Path so you can use it directly from regular command line/prompt. This is an option during install with most installers.
 
-[Git client](https://gitforwindows.org/)
-[Node.js]https://nodejs.org/download/
-Cmder Recommended console emulator replacement for cmd.exe
+* [Git client](https://gitforwindows.org/)
+* [Node.js]https://nodejs.org/download/
+* Cmder Recommended console emulator replacement for cmd.exe
+
+## Downloading the repository
+
+Start your command prompt (either Cmder standard windows cmd.exe).
+
+* Create a new directory where you want to put the files from this repository.
+* For example if you already have a directory on c: drive called www you'll first want to navigate to that
+* Do this by tying `cd c:\www`
+* To create a new directory type `mkdir tgg-angular-prototype` (to call it something else just replace prototype with whatever name you want it to be)
+* Make sure to navigate to the new directory by then typing `cd tgg-angular-prototype`
+
+*Then type the following commands.*
+* type `npm install -g @angular/cli` in the command line
+    * this will download the angular cli
+* `git clone https://github.com/lifeonlars/tgg-angular-prototype.git .`
+    * NOTE: The "." at the end specifies the current folder as the checkout folder.
+    * This should download all the files from the git repository and might take a few minutes.
+* When the download is complete type `npm install`
+    * This will download all the node dependencies used for the project.
+* When the packages download is complete type `ng serve`
+    * This will start the local web server and view the prototype in your browser.
+    * After a few seconds this should automatically start your browser and open up http://localhost:4200/
+
 
 ## Development server
 
