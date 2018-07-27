@@ -1,13 +1,25 @@
 # NgPrototype
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0-rc.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0
 
 ## Pre-requistes
 NOTE: It's recommended that you add the Git client to the Windows Path so you can use it directly from regular command line/prompt. This is an option during install with most installers.
 
 * [Git client](https://gitforwindows.org/)
-* [Node.js]https://nodejs.org/download/
-* Cmder Recommended console emulator replacement for cmd.exe
+* [Node.js]https://nodejs.org/download/ (Node 10.x.x preferred)
+* Windows Build Tools (https://www.npmjs.com/package/windows-build-tools)
+  This will replace the need for installing Visual C++ and Python 2.7
+  `npm install --global --production windows-build-tools`
+* Cmder Recommended console emulator replacement for cmd.exe (nice to have, not required)
+
+*Install the following via command line using the global flag*
+These are either required to be installed as global packages or tend to avoid errors if installed globablly first
+
+* `npm install -g @angular/cli` to install the angular cli
+* `npm install -g @angular-devkit/schematics-cli` to install devkit schematics
+* `npm install -g firebase-tools` to install Firebase Tools
+* `npm install -g node-gyp` best installed globablly first before installing locally in the project
+* `npm install -g node-sass` best installed globablly first before installing locally in the project
 
 ## Downloading the repository
 
@@ -20,8 +32,8 @@ Start your command prompt (either Cmder standard windows cmd.exe).
 * Make sure to navigate to the new directory by then typing `cd tgg-angular-prototype`
 
 *Then type the following commands.*
-* type `npm install -g @angular/cli` in the command line
-    * this will download the angular cli
+
+
 * `git clone https://github.com/lifeonlars/tgg-angular-prototype.git .`
     * NOTE: The "." at the end specifies the current folder as the checkout folder.
     * This should download all the files from the git repository and might take a few minutes.
@@ -29,7 +41,7 @@ Start your command prompt (either Cmder standard windows cmd.exe).
     * This will download all the node dependencies used for the project.
 * When the packages download is complete type `ng serve`
     * This will start the local web server and view the prototype in your browser.
-    * After a few seconds this should automatically start your browser and open up http://localhost:4200/
+    * After a few seconds you can start your browser and open up http://localhost:4200/
 
 
 ## Development server
