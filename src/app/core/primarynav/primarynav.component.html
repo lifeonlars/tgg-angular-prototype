@@ -15,7 +15,7 @@
                               <div class="menu-main-l3" data-ng-class="{'wide': subcategory.subcategories.length > 11, 'expand': showL3}">
                                   <ul class="col-sm-6" *ngIf="subcategory.subCategories">
                                       <li *ngFor="let subsubcategory of subcategory.subCategories">
-                                          <a href="/category/">{{subsubcategory.name}}</a>
+                                          <a [routerLink]="['/category-listing', subsubcategory.id]">{{subsubcategory.name}}</a>
                                       </li>
                                   </ul>
                                   <!-- <ul class="col-sm-6">

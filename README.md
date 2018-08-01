@@ -1,6 +1,48 @@
 # NgPrototype
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0-rc.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0
+
+## Pre-requistes
+NOTE: It's recommended that you add the Git client to the Windows Path so you can use it directly from regular command line/prompt. This is an option during install with most installers.
+
+* [Git client](https://gitforwindows.org/)
+* [Node.js]https://nodejs.org/download/ (Node 10.x.x preferred)
+* Windows Build Tools (https://www.npmjs.com/package/windows-build-tools)
+   - This will replace the need for installing Visual C++ and Python 2.7
+   - `npm install --global --production windows-build-tools`
+* Cmder Recommended console emulator replacement for cmd.exe (nice to have, not required)
+
+*Install the following via command line using the global flag*
+These are either required to be installed as global packages or tend to avoid errors if installed globablly first
+
+* `npm install -g @angular/cli` to install the angular cli
+* `npm install -g @angular-devkit/schematics-cli` to install devkit schematics
+* `npm install -g firebase-tools` to install Firebase Tools
+* `npm install -g node-gyp` best installed globablly first before installing locally in the project
+* `npm install -g node-sass` best installed globablly first before installing locally in the project
+
+## Downloading the repository
+
+Start your command prompt (either Cmder standard windows cmd.exe).
+
+* Create a new directory where you want to put the files from this repository.
+* For example if you already have a directory on c: drive called www you'll first want to navigate to that
+* Do this by tying `cd c:\www`
+* To create a new directory type `mkdir tgg-angular-prototype` (to call it something else just replace prototype with whatever name you want it to be)
+* Make sure to navigate to the new directory by then typing `cd tgg-angular-prototype`
+
+*Then type the following commands.*
+
+
+* `git clone https://github.com/lifeonlars/tgg-angular-prototype.git .`
+    * NOTE: The "." at the end specifies the current folder as the checkout folder.
+    * This should download all the files from the git repository and might take a few minutes.
+* When the download is complete type `npm install`
+    * This will download all the node dependencies used for the project.
+* When the packages download is complete type `ng serve`
+    * This will start the local web server and view the prototype in your browser.
+    * After a few seconds you can start your browser and open up http://localhost:4200/
+
 
 ## Development server
 
@@ -28,11 +70,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## MODULES
 
-### Shared Module 
+### Shared Module
 
 Contains common layout elements like masthead, menus, footer as well as other re-usable components
 
-### Products Module 
+### Products Module
 
 Contains products page, search/category listing pages
 
@@ -44,11 +86,11 @@ Contains cart, checkout, order confirmation pages.
 
 Contains My Account sections
 
-## COMPONENTS 
+## COMPONENTS
 
-### Re-usable components 
+### Re-usable components
 
- * Product Tile 
+ * Product Tile
     - Standard Tile (grid view)
     - List Tile (should list view of tiles be a separate component?)
     - Slim Tile (for certona style widgets and cross sell in cart)
@@ -56,20 +98,20 @@ Contains My Account sections
  * Banner slider (homepage)
  * Pagination component
  * Postcode search
- * Store listing 
+ * Store listing
 
 ### UI / Shared Components
 
- - Masthead 
+ - Masthead
    * Search box
    * Minicart
-   * Main Navbar (main menu) 
+   * Main Navbar (main menu)
      - Products menu
      - Brands menu
      - Deals & offers menu
-     - Installation & services menu 
+     - Installation & services menu
    * Mobile menu
-   * Set store   
+   * Set store
  - Footer
 
 
@@ -87,20 +129,20 @@ Contains My Account sections
  - Calculate delivery cost (given type/postcode)
  - Pick-up options (given store ID => store id requires postcode)
  - Load selected fulfillment options (if delivery or pick-up is selected, load previous options)
- 
- *Product API* 
- 
+
+ *Product API*
+
   - Single product by ID
   - Products by category
   - Products by keyword (name only)
   - Products by IDs (array of IDs)
-  
+
   *Postcode Zone API*
    - Return delivery zone based on postcode (metro, local, regional-a, regional-b, remote)
-   
+
   *Store API*
    - Load single store information based on ID (Address, opening hours, phone number etc.)
-   
+
   *Category API*
    - Load single category information based on ID
-  
+
